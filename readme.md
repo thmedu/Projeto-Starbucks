@@ -9,6 +9,8 @@ Este é um projeto de website para a Starbucks, apresentando suas ofertas e info
 - JavaScript
 
 ## Funcionalidades 🚀
+![image](https://github.com/thmedu/Projeto-Starbucks/assets/141462806/1050eab4-3931-4e51-8e80-90ce01eb4ea8)
+
 
 - Apresenta informações sobre os produtos e serviços da Starbucks.
 - Permite visualizar imagens dos produtos.
