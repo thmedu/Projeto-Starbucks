@@ -39,4 +39,10 @@ Este projeto consiste no desenvolvimento de um website para a Starbucks, uma fam
    git push origin feature/sua-contribuicao
    ```
 7. Abra um Pull Request neste repositório e descreva suas alterações.
-
+
+## Autor ✍️
+
+Este projeto foi desenvolvido por [Thomas Nascimento].
+
+
+
