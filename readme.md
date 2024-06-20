@@ -39,15 +39,4 @@ Este projeto consiste no desenvolvimento de um website para a Starbucks, uma fam
    git push origin feature/sua-contribuicao
    ```
 7. Abra um Pull Request neste repositório e descreva suas alterações.
-
-## Autor ✍️
-
-Este projeto foi desenvolvido por [Seu Nome].
-
-## Licença 📝
-
-Este projeto está licenciado sob a [Licença MIT](LICENSE).
-
----
-
-Este README.md está agora mais completo, oferecendo informações detalhadas sobre o projeto do website da Starbucks, incluindo tecnologias utilizadas, funcionalidades principais, guia para contribuições e detalhes de licenciamento.
+
