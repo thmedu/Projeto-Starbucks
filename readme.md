@@ -1,8 +1,13 @@
 # Starbucks Website 🌟☕ ![Starbucks Logo](https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/40px-Starbucks_Corporation_Logo_2011.svg.png)
 
+
+
+![Post minimalista marketing digital roxo branco e azul (3)](https://github.com/thmedu/Projeto-Starbucks/assets/141462806/2ab296ba-8d6e-4d30-8e82-3167c605666a)
+
+
 Este projeto consiste no desenvolvimento de um website para a Starbucks, uma famosa cadeia de cafeterias. O objetivo é apresentar as ofertas da marca, informações sobre seus produtos e serviços de forma atrativa e funcional.
 
-![7](https://github.com/thmedu/Projeto-Starbucks/assets/141462806/dfe0e3a9-da62-431e-ad21-542c229da982)
+
 
 
 ## Tecnologias Utilizadas 🛠️
