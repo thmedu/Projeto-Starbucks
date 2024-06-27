@@ -12,9 +12,9 @@ Este projeto consiste no desenvolvimento de um website para a Starbucks, uma fam
 
 ## Tecnologias Utilizadas 🛠️
 
-- HTML5
-- CSS3
-- JavaScript
+![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![Git](https://img.shields.io/badge/Git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+
 
 ## Funcionalidades 🚀
 
