@@ -1,0 +1,713 @@
+/* Importando a fonte Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Estilos gerais para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Definindo Poppins como fonte padrão */
+}
+
+/* Corpo da página */
+body {
+    overflow-x: hidden; /* Ocultar barra de rolagem horizontal */
+    background-color: #15312a;
+}
+
+/* Seções principais */
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #15312a;
+    color: #15312a;
+    background-size: cover; /* Cobrir todo o espaço disponível */
+    background-position: center; /* Centralizar a imagem */
+    background-repeat: no-repeat; /* Não repetir a imagem */
+}
+
+/* Seção específica para o conteúdo secundário */
+.section2 {
+  width: 100%;
+  min-height: 80vh;
+  padding: 50px;
+  background: #242424;
+}
+
+/* Área à direita da seção secundária */
+.section2right {
+    width: 55%;
+    min-height: 80vh;
+    padding: 50px;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Título da seção secundária */
+.section2heading {
+    color: #fff;
+    text-align: center;
+    font-weight: 800;
+    font-size: 4.5rem; /* Tamanho grande para títulos */
+}
+
+/* Estilo para o span dentro da seção 2 */
+.span2 {
+    color: #fff;
+    font-weight: 300;
+    font-size: 1rem; /* Ajuste no tamanho do texto */
+    text-indent: 0.5px; /* Ajuste mínimo no recuo do texto */
+}
+
+/* Estilos para o cabeçalho */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 100px;
+  display: flex;
+  align-items: center;
+  background: rgb(41 127 99 / 27%);
+  z-index: 1000;
+  backdrop-filter: drop-shadow(2px 4px 6px black);
+  color: #000;
+}
+
+/* Estilos para o logo no cabeçalho */
+header .logo {
+  max-width: 80px; /* Largura máxima do logo */
+}
+
+/* Estilos para os links no cabeçalho */
+header ul {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; /* Ocupa o espaço disponível */
+  justify-content: center; /* Centraliza os links horizontalmente */
+  margin: 0; /* Remove margem padrão */
+  padding: 0; /* Remove padding padrão */
+}
+
+header ul li {
+  list-style: none;
+  margin-left: 20px; /* Espaçamento entre os itens de menu */
+}
+
+header ul li a {
+  color: #fff; /* Cor do texto */
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease; /* Transição suave de cor */
+  padding: 10px 20px; /* Espaçamento interno dos links */
+  display: inline-block; /* Para alinhar centralmente */
+}
+
+/* Estilos de hover para os links no cabeçalho */
+header ul li a:hover {
+  color: #45a049; /* Cor destacada no hover */
+}
+
+
+/* Botão para rolar para o topo */
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: #006241;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50px; /* Borda arredondada */
+}
+
+/* Estilização do botão ao passar o mouse */
+#myBtn:hover {
+    background-color: #45a049; /* Cor destacada no hover */
+}
+
+/* Estilos gerais para o conteúdo */
+
+
+.content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: justify;
+  padding: 20px 60px 0px 49px;
+}
+
+/* Caixa de texto no conteúdo principal */
+.content .textBox {
+    position: relative;
+    max-width: 600px;
+}
+
+/* Título H2 dentro da caixa de texto */
+.content .textBox h2 {
+    color: #fff;
+    font-size: 3em;
+    font-weight: 700;
+    line-height: 1.3;
+    
+}
+
+/* Estilo para o span dentro do título H2 */
+.content .textBox h2 span {
+    color: #006241;
+    font-size: 3em;
+    font-weight: 700;
+}
+
+/* Parágrafo dentro da caixa de texto */
+.content .textBox p {
+    color: #fff;
+    margin-top: 20px; /* Espaçamento superior para o parágrafo */
+    line-height: 2.8;
+
+}
+
+/* Estilo para o link 'Saiba Mais' */
+.content .textBox a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px; /* Espaçamento interno maior */
+    background: #006241;
+    color: #fff;
+    border-radius: 40px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
+}
+
+/* Estilo para o hover no botão 'Saiba Mais' */
+.content .textBox a:hover {
+    background: #45a049; /* Cor destacada no hover */
+    color: #fff;
+}
+
+/* Caixa de imagem dentro do conteúdo principal */
+.content .imgBox {
+    width: 100%; /* Largura total para layout responsivo */
+    display: flex;
+    justify-content: center; /* Centralizar imagem */
+    padding: 20px 0; /* Espaçamento interno ajustado */
+    margin-top: 50px;
+}
+
+/* Imagem dentro da caixa de imagem */
+.content .imgBox img {
+    max-width: 100%; /* Largura máxima da imagem */
+    height: auto; /* Altura automática para manter a proporção */
+}
+
+/* Lista de miniaturas para o carousel */
+.thumbnails {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Alinhar verticalmente */
+}
+
+/* Estilos para cada item da lista de miniaturas */
+.thumbnails li {
+    list-style: none;
+    margin: 0 5px; /* Margem entre os itens de miniatura */
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Efeito de hover nas miniaturas */
+.thumbnails li:hover {
+    transform: translateY(-5px); /* Deslocamento suave para cima ao passar o mouse */
+}
+
+/* Imagens dentro dos itens da lista de miniaturas */
+.thumbnails li img {
+    width: 50px; /* Largura fixa para as miniaturas */
+    height: auto; /* Altura automática para manter a proporção */
+}
+
+/* Estilização para o container dos ícones de redes sociais */
+.social-container {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px; /* Ajuste a posição da borda esquerda conforme necessário */
+    z-index: 999; /* Garante que os ícones fiquem acima do conteúdo rolável */
+  }
+  
+  /* Estilização para as redes sociais */
+  .social {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Mostra os ícones verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+  }
+  
+  .social li {
+    margin-bottom: 10px; /* Espaçamento entre os ícones */
+  }
+  
+  .social a {
+    display: block;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: #333;
+    transition: background-color 0.3s ease;
+  }
+  
+  .social a:hover {
+    background-color: #555;
+  }
+  
+  
+  /* Responsivo para telas menores */
+  @media screen and (max-width: 375px) {
+    .social {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .social li {
+      margin: 5px 0;
+    }
+  }
+  
+/* Estilos para o contêiner do carrossel */
+.carousel-item-4 {
+    width: 100%; /* Garante que cada item do carrossel ocupe toda a largura disponível */
+    overflow: hidden; /* Impede que a imagem saia do limite do item do carrossel */
+  }
+  
+  /* Estilos para as imagens dentro de cada item do carrossel */
+  .carousel-item-4 img {
+    width: 100%; /* Garante que a imagem ocupe toda a largura do item do carrossel */
+    height: auto; /* Permite que a altura seja ajustada automaticamente para manter a proporção */
+    display: block; /* Garante que a imagem se comporte como um bloco */
+  }
+  
+/* Estilo para o círculo de fundo */
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #006241;
+    clip-path: circle(375px at right 800px); /* Efeito de clip-path para o círculo */
+}
+
+/* Carousel principal */
+.carousel {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Lista de itens do carousel */
+.list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Estilo para cada item do carousel */
+.item {
+    min-width: 100%;
+    flex: 0 0 auto;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Imagem dentro de cada item do carousel */
+.item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px; /* Espaçamento inferior da imagem */
+}
+
+/* Botões de controle para o carousel */
+.buttons {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+/* Estilo para os botões de controle do carousel */
+.buttons button {
+    background-color: #006241;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 30px;
+}
+
+/* Efeito de hover nos botões de controle */
+.buttons button:hover {
+    background-color: #004d33;
+}
+
+/* Estilização para os formulários */
+input[type=text], 
+input[type=email], 
+select, 
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+/* Estilização para o botão de envio no formulário */
+input[type=submit] {
+    background-color: #51341F;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Efeito de hover no botão de envio do formulário */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Estilização para os rótulos nos formulários */
+label {
+    font-weight: 700;
+    color: #006241;
+}
+
+/* Estilização para o container que envolve o formulário */
+.container {
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 40px;
+}
+
+/* Estilo para o rodapé */
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: -100px; /* Começa fora da tela */
+    width: 100%;
+    background-color: #242424;
+    color: #fff; /* Cor do texto mais escura para melhor legibilidade */
+    text-align: center;
+    padding: 10px 0; /* Aumentei o padding para 20px */
+    font-weight: 500; /* Reduzi o peso da fonte para torná-la mais leve */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil na parte inferior */
+    transition: bottom 0.3s ease; /* Transição suave para a animação */
+}
+
+.footer.active {
+    bottom: 0; /* Aparece no final da página */
+}
+
+.footer::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #fff; /* Linha decorativa */
+    color: #fff; /* Cor do texto mais escura para melhor legibilidade */
+    margin: 10px 0;
+}
+
+
+/* Estilos para telas menores que 768px */
+@media (max-width: 767px) {
+    header {
+        padding: 20px;
+    }
+
+    header .logo {
+        max-width: 60px;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background: url('https://starbucks-landing-page.netlify.app/public/images/menu.png');
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 11;
+    }
+
+    .toggle.active {
+        background: url('https://starbucks-landing-page.netlify.app/public/images/close.png');
+        background-size: 25px;
+    }
+
+    header ul.navigation.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        z-index: 10;
+    }
+
+    header ul li a {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .content .textBox,
+    .content .imgBox {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .content .imgBox img {
+        max-width: 100%;
+    }
+
+    .thumbnails li img {
+        max-width: 50px;
+    }
+
+    .social {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #006241;
+        z-index: 11;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Estilos para telas de 768px a 1090px */
+@media (min-width: 768px) and (max-width: 1090px) {
+    header {
+        padding: 20px;
+    }
+
+    header .logo {
+        max-width: 60px;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background: url('https://starbucks-landing-page.netlify.app/public/images/menu.png');
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 11;
+    }
+
+    .toggle.active {
+        background: url('https://starbucks-landing-page.netlify.app/public/images/close.png');
+        background-size: 25px;
+    }
+
+    header ul.navigation.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        z-index: 10;
+    }
+
+    header ul li a {
+        font-size: 1.5em;
+        margin: 5px 0;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .content {
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .content .textBox,
+    .content .imgBox {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .content .imgBox img {
+        max-width: 100%;
+    }
+
+    .thumbnails li img {
+        max-width: 40px;
+    }
+
+    .social {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #006241;
+        z-index: 11;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* Estilos para telas maiores que 1090px */
+@media (min-width: 1091px) {
+    header {
+        padding: 20px;
+    }
+
+    header .logo {
+        max-width: 60px;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    header ul {
+        display: flex !important;
+    }
+
+    header ul.navigation.active {
+        display: flex;
+        position: static;
+        width: auto;
+        height: auto;
+        background: transparent;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    header ul li {
+        margin-left: 20px;
+    }
+
+    header ul li a {
+        font-size: 1.2em;
+        margin: 0;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .content {
+        flex-direction: row;
+        margin-top: 0;
+    }
+
+    .content .textBox {
+        max-width: 50%;
+    }
+
+    .content .textBox h2 {
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+
+    .content .imgBox {
+        max-width: 50%;
+        text-align: right;
+    }
+
+    .content .imgBox img {
+        max-width: 100%;
+    }
+
+    .thumbnails li img {
+        max-width: 60px;
+    }
+
+    .social {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #006241;
+        z-index: 11;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

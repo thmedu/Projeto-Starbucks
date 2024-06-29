@@ -1,0 +1,371 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+h2 span {
+  color: #e2ba48; /* Cor do span2 */
+}
+
+p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.learnmore, .learnmore:hover {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e2ba48;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.learnmore:hover {
+  background-color: #c06804; /* Cor alternativa ao hover */
+}
+
+/* Ícones na seção de conteúdo */
+.section2heading::before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f128"; /* Ícone de dúvida */
+  margin-right: 10px;
+  color: #e2ba48;
+}.textBox2 {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carousel {
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+.carousel-list {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  flex: 0 0 25%;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.carousel-item img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+}
+
+/* Seleção de texto personalizada */
+::selection {
+  background-color: #ff6f61;
+  color: #fff;
+}
+
+/* Estilo básico para links */
+a {
+  text-decoration: none;
+  color: #ff6f61;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #e65f52;
+}
+.content-2,
+.content-3,
+.content-4 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #15312a;
+  color: #fff;
+  text-align: center;
+  background-image: url('../img/pngegg (5).png'); /* Caminho da sua imagem de fundo */
+  background-size: cover; /* Cobrir todo o espaço disponível */
+  background-position: center; /* Centralizar a imagem */
+  background-repeat: no-repeat; /* Não repetir a imagem */
+}
+
+.content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #242424;
+  color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.content2 .textBox2 {
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.content2 h2 {
+  font-size: 4em;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.content2 #span2 {
+  color: #ff6f61;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content2 p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #ddd;
+}
+
+.content2 a {
+  padding: 12px 24px;
+  background-color: #ff6f61;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.content2 a:hover {
+  background-color: #e65f52;
+}
+.content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #242424;
+  color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.content2 .textBox2 {
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.content2 h2 {
+  font-size: 4em;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.content2 #span2 {
+  color: #ff6f61;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.content2 p {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #ddd;
+}
+
+.content2 a {
+  padding: 12px 24px;
+  background-color: #ff6f61;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
+}
+
+.content2 a:hover {
+  background-color: #e65f52;
+}
+
+.carousel-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.carousel-item {
+  width: 100%;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.carousel-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  cursor: pointer;
+}
+/* Estilos para a seção de Horário de Funcionamento */
+.time {
+  background-color: #15312a;
+  padding: 80px 0;
+  text-align: center;
+  background-image: url('../img/pngegg\ \(5\).png'); /* Caminho da sua imagem de fundo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.time .container {
+  max-width: 90%; /* Alterado para 90% da largura da tela */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* Para garantir que o conteúdo fique na frente da imagem de fundo */
+  background-color: #242424;
+  color: #fff;
+
+}
+
+.time h2 {
+  font-size: 2.rem;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.time .opening-hours {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.time .day {
+  flex: 1;
+  background-color: #fff;
+  padding: 30px 20px;
+  margin: 0 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.time .day:hover {
+  transform: translateY(-10px);
+}
+
+.time .day h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.time .day p {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+.time .info {
+  font-size: 1.2rem;
+  color: #f4f4f4;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+/* Estilos para dispositivos móveis e tablets em modo paisagem (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* Reduzir o tamanho da fonte para melhor legibilidade */
+  }
+
+  h2 {
+    font-size: 2rem; /* Reduzir o tamanho do título padrão */
+  }
+
+  .content2 h2 {
+    font-size: 3rem; /* Ajustar tamanho do título em conteúdo específico */
+  }
+
+  .textBox2 {
+    padding: 20px; /* Redimensionar caixa de texto */
+  }
+
+  .carousel-item {
+    flex: 0 0 50%; /* Ajustar tamanho do item do carrossel */
+  }
+
+  .modal img {
+    max-width: 100%; /* Ajustar imagem no modal */
+    max-height: 80vh; /* Ajustar altura máxima da imagem no modal */
+  }
+}
+
+/* Estilos para smartphones em modo retrato (max-width: 480px) */
+@media only screen and (max-width: 480px) {
+  body {
+    font-size: 12px; /* Reduzir ainda mais o tamanho da fonte */
+  }
+
+  .content2 h2 {
+    font-size: 2.5rem; /* Redimensionar título em conteúdo específico */
+  }
+
+  .textBox2 {
+    padding: 10px; /* Ajustar ainda mais o padding da caixa de texto */
+  }
+
+  .carousel-item {
+    flex: 0 0 100%; /* Fazer o item do carrossel ocupar toda a largura */
+    margin-right: 0; /* Remover margem direita dos itens */
+  }
+
+  .modal img {
+    max-height: 70vh; /* Reduzir altura máxima da imagem no modal */
+  }
+}

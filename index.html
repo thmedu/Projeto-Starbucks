@@ -1,80 +1,266 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/x-icon" href="/img/logo.png">
-    <title>Starbucks Website Landing Pages</title>
-    <link rel="icon" type="image/x-icon" href="/img/logo.png"> 
-    <link rel="stylesheet" href="./assets/styles.css">    
+<html lang="pt-br">
 
-  </head>
-  <body>
-    <section>
-      <div class="circle"></div>
-      <header>
-        <a href="#" class="logo"> <img src="img/logo.png" /></a>
-        <ul class="nav-hover" style="list-style-type: none;">
-          <li><a href="hom.html" class="menu-btn">Inicio</a></li>
-          <li><a href="main.html" class "menu-btn">Menu</a></li>
-          <li><a href="#">O que temos de novo</a></li>
-          <li><a href="#">Contato.</a></li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Starbucks - Café e experiências únicas. Junte-se ao Starbucks Rewards™ para benefícios exclusivos.">
+    <meta name="keywords" content="Starbucks, café, bebidas, Rewards, menu, café da manhã">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starbucks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="HASH_CORRETO" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+    <link rel="stylesheet" href="./assets/css/content-2.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-v5i/9cUn9mvhAchU8TrdTVgrhFxc3WokVZzVZlQSTKbsfyIbNRt1L1l2P20dQf+UMMKrDcq64ZcUkTp+ZJl4Sw==" crossorigin="anonymous" rel="stylesheet">
+</head>
+
+<body>
+    <section id="home">
+        <div class="circle"></div>
+        <header>
+            <a href="#home"><img src="./assets/img/logo.png" class="logo" alt="Starbucks Logo"></a>
+            <div class="toggle" onclick="toggleMenu()"></div>
+            <ul class="navigation">
+                <li><a href="#home"></a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#novidades">Novidades</a></li>
+                <li><a href="#horarios">Horarios</a></li>
+                <li><a href="#duvidas">Dúvidas</a></li>
+                <li><a href="#duvidas">Loja Proxima</a></li>
+                <li><a href="#duvidas">Fazer pedido</a></li>
+            </ul>
+        </header>
+
+        <div class="content">
+            <button onclick="topFunction()" id="myBtn" title="Clique para ir ao topo" class="button">Topo</button>
+            <div class="textBox">
+                <h2>NÃO É APENAS CAFÉ<br />É <span id="output">STARBUCKS</span></h2>
+
+                <p>Faça cada gole mais recompensador. Junte-se ao Starbucks Rewards™ para ganhar benefícios de nível
+                    Gold como bebidas e alimentos gratuitos, obtenha recargas gratuitas, pague e peça com seu telefone,
+                    e mais.</p>
+                <a href="#" id="learnmore">Saiba Mais</a>
+            </div>
+
+            <div class="imgBox">
+                <img src="./assets/img/2cafe.png" alt="Starbucks Café" class="starbucks">
+            </div>
+        </div>
+
+        <ul class="thumbnails">
+            <li>
+                <img id="changeCreme" src="./assets/img/cafe-canudo-reto/cafe-laranja.png" onclick="imageSlider('./assets/img/cafe-canudo-reto/cafe-laranja.png');
+                              changeCircleColor('#e2ba48');" alt="Café Laranja">
+            </li>
+
+            <li>
+                <img id="changeGrozelia" src="./assets/img/cafe-canudo-reto/café groselha.png" onclick="imageSlider('./assets/img/cafe-canudo-reto/café groselha.png');
+                              changeCircleColor('#ce4326');" alt="Café Groselha">
+            </li>
+
+            <li>
+                <img id="changeAcai" src="./assets/img/cafe-canudo-reto/cafe-verde3.png" onclick="imageSlider('./assets/img/cafe-canudo-reto/cafe-verde3.png');
+                              changeCircleColor('#30252b');" alt="Café Verde">
+            </li>
+
+            <li>
+                <img id="changeRosa" src="./assets/img/cafe-canudo-reto/cafe-rosa.png" onclick="imageSlider('./assets/img/cafe-canudo-reto/cafe-rosa.png');
+                              changeCircleColor('#f9d6d9');" alt="Café Rosa">
+            </li>
         </ul>
+        <div class="social-container">
+            <ul class="social" id="social">
+              <li><a href="https://www.facebook.com/Starbucks/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+              <li><a href="https://twitter.com/Starbucks" target="_blank"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="https://www.instagram.com/starbucks_sa" target="_blank"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+          </div>
+          
         
-      </header>
-      <div class="content">
-        <div class="textBox">
-          <h2>Não é apenas café<br />É <span>Starbucks</span></h2>
-    
-          <p>
-            Quer esteja à procura de uma chávena de café clássica, de uma bebida gelada refrescante ou de uma guloseima deliciosa, temos algo para todos.
-          </p>
-          <a href="#">Learn more</a>
-        </div>
-        <div class="imgBox">
-          <img src="img/img1.png" class="starbucks" />
-        </div>
-      </div>
-      <ul class="thumb">
-        <li>
-          <img
-            src="img/thumb1.png"
-            onclick="imgSlider('img/img1.png');changeCircleColor('#00AD65')"
-          />
-        </li>
-        <li>
-          <img
-            src="./img/img2.png"
-            onclick="imgSlider('img/img2.png');changeCircleColor('#FF6C96')"
-          />
-        </li>
-        <li>
-          <img
-            src="img/thumb3.png"
-            onclick="imgSlider('img/img3.png');changeCircleColor('#EF21B4')"
-          />
-        </li>
-      </ul>
-      <ul class="sci">
-        <li>
-          <a href="#"><img src="img/facebook.png" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="./img/twitter-x.svg"  class="tt"/></a>
-        </li>
-        <li>
-          <a href="#"><img src="img/instagram.png" /></a>
-        </li>
-      </ul>
     </section>
-    <script type="text/javascript">
-      function imgSlider(anything) {
-        document.querySelector(".starbucks").src = anything;
-      }
-      function changeCircleColor(color) {
-        const circle = document.querySelector(".circle");
-        circle.style.background = color;
-      }
+
+    <section class="content-2" id="menu">
+        <div class="content2">
+            <div class="textBox2">
+                <h2>UMA CHÁVENA <br />DE <span class="span">CAFÉ PERFEITA</span></h2>
+                <p>Desde o nosso início em 1971, buscamos a perfeição em cada xícara. Nossas torrefações meticulosas
+                    garantem que cada lote de café ofereça o máximo de sabor. Nossos baristas dedicados preparam cada
+                    bebida artesanalmente, atendendo aos gostos individuais de nossos clientes.</p>
+                <a href="#" class="learnmore">Descubra Mais</a>
+            </div>
+            <div class="carousel">
+                <div class="carousel-list">
+                    <div class="carousel-item-4" data-color="#c9bdb9">
+                        <img src="./assets/img/sem canudo/cafe-chocolate.png" alt="Café Chocolate" onclick="openImageModal(this)">
+                    </div>
+                    <div class="carousel-item-4" data-color="#f2210b">
+                        <img src="./assets/img/sem canudo/cafe-tutti.png" alt="Café Tutti" onclick="openImageModal(this)">
+                    </div>
+                    <div class="carousel-item-4" data-color="#c06804">
+                        <img src="./assets/img/sem canudo/café-amarelo.png" alt="Café Amarelo" onclick="openImageModal(this)">
+                    </div>
+                    <div class="carousel-item-4" data-color="#c06804">
+                        <img src="./assets/img/sem canudo/cafe-azul.png" alt="Café Azul" onclick="openImageModal(this)">
+                        <div class="carousel-item-4" data-color="#c06804">
+                            <img src="./assets/img/" alt="Café Azul" onclick="openImageModal(this)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-3" id="novidades">
+        <div class="content2">
+            <div class="textBox2">
+                <h2>Bebidas <span class="span"> Refreshers® </span></h2>
+                <p>Descubra os Refreshers® da Starbucks®, bebidas que combinam frescor e sabor de forma única. Desde
+                    1971, nossos grãos são cuidadosamente selecionados e torrados para oferecer a máxima qualidade.
+                    Nossos baristas são especialistas em preparar cada bebida de forma artesanal, garantindo uma
+                    experiência refrescante a cada gole.</p>
+                <a href="#" class="learnmore">Saiba Mais</a>
+            </div>
+            <div class="carousel">
+                <div class="carousel-list">
+                    <div class="carousel-item cafe-chocolate" data-background="#51341F" data-color="#c9bdb9">
+                        <img src="./assets/img/Refreshers/download-removebg-preview.png" alt="Café Chocolate" onclick="openImageModal(this)">
+                    </div>
+                    <div class="carousel-item cafe-tutti" data-background="#f2210b" data-color="#f2210b">
+                        <img src="./assets/img/Refreshers/download__1_-removebg-preview.png" alt="Café Tutti" onclick="openImageModal(this)">
+                    </div>
+
+                    <div class="carousel-item cafe-amarelo" data-background="#E2BA48" data-color="#c06804">
+                        <img src="./assets/img/Refreshers/download__2_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
+                    </div>
+                    <div class="carousel-item cafe-amarelo" data-background="#E2BA48" data-color="#c06804">
+                        <img src="./assets/img/Refreshers/download__3_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
+                    </div>
+                    <div class="carousel-item cafe-amarelo" data-background="#E2BA48" data-color="#c06804">
+                        <img src="./assets/img/Refreshers/download__4_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
+                    </div>
+                    <div class="carousel-item cafe-amarelo" data-background="#E2BA48" data-color="#c06804">
+                        <img src="./assets/img/Refreshers/images__1_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-4" id="menu">
+        <div class="content2">
+            <div class="textBox2">
+                <h2>Café com <span class="span"> Sanduíches e wraps </span></h2>
+                <p>Explore nosso delicioso menu de café da manhã, incluindo sanduíches e wraps preparados com
+                    ingredientes frescos e cuidadosamente selecionados. Desde nossa fundação em 1971, priorizamos a
+                    qualidade de cada ingrediente, garantindo uma experiência única a cada mordida. Nossos baristas
+                    estão à disposição para preparar seu café da manhã da maneira que você preferir.</p>
+                <a href="#" class="learnmore">Saiba Mais</a>
+            </div>
+            <div class="carousel">
+                <div class="carousel-list">
+                    <div class="carousel-item data-color=" #c9bdb9">
+                        <img src="./assets/img/café da manhã/download__9_-removebg-preview.png" alt="Café Chocolate" onclick="openImageModal(this)">
+                    </div>
+                    <div class="carousel-item data-color=" #f2210b">
+                        <img src="./assets/img/café da manhã/download__5_-removebg-preview.png" alt="Café Tutti" onclick="openImageModal(this)">
+                    </div>
+                    <div class="carousel-item-4 data-color=" #c06804">
+                        <img src="./assets/img/café da manhã/download__7_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="time" id="horarios">>
+        <div class="container">
+            <h2>Horário de Funcionamento</h2>
+            <div class="opening-hours">
+                <div class="day">
+                    <h3>Segunda a Sexta</h3>
+                    <p>08:00 - 18:00</p>
+                </div>
+                <div class="day">
+                    <h3>Sábado</h3>
+                    <p>09:00 - 15:00</p>
+                </div>
+                <div class="day">
+                    <h3>Domingo</h3>
+                    <p>Fechado</p>
+                </div>
+            </div>
+            <p class="info">Estamos abertos todos os dias da semana para atendê-lo melhor. Venha nos visitar!</p>
+        </div>
+    </section>
+
+    <section class="section2" id="duvidas">
+        <h2 class="section2heading" id="heading2">Alguma Dúvida...</h2>
+        <br>
+        <div class="container">
+            <input type="text" name="myhoneypot" class="myclass" style="display:none">
+            <form id="my-form" action="https://formspree.io/f/xdoveeaj" method="POST">
+                <label for="fname">Primeiro Nome</label>
+                <input type="text" id="fname" name="firstname" placeholder="Seu nome.." required>
+
+                <label for="lname">Último Nome</label>
+                <input type="text" id="lname" name="lastname" placeholder="Seu sobrenome.." required>
+
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" pattern="[^@]*@[^@]*" required placeholder="Seu endereço de e-mail..">
+
+                <label for="subject">Assunto</label>
+                <textarea id="subject" name="subject" placeholder="Escreva algo.." style="height:200px" required></textarea>
+
+                <input type="submit" value="Enviar" id="my-form-button">
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Desenvolvido por Thomas® 2024 </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://formspree.io/js/formbutton-v1.0.4.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/slideIndex.js"></script>
+
+    <script>
+        // Função para mostrar/esconder o menu responsivo
+        function toggleMenu() {
+            var navigation = document.querySelector('.navigation');
+            navigation.classList.toggle('active');
+        }
+
+        // Função para rolar suavemente para o topo da página
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            function changeSlide() {
+                console.log("slideIndex:", slideIndex);
+                console.log("slides:", slides);
+
+                // Verifique se slides[slideIndex] não é null antes de acessar suas propriedades
+                if (slides[slideIndex]) {
+                    slides.forEach((slide) => {
+                        slide.style.display = 'none';
+                    });
+                    slides[slideIndex].style.display = 'block';
+
+                    const currentSlide = slides[slideIndex];
+                    const backgroundColor = currentSlide.dataset.background;
+                    const textColor = currentSlide.dataset.color;
+
+                    content2.style.background = backgroundColor;
+                    content2.style.color = textColor;
+                    span2.style.color = textColor;
+                } else {
+                    console.error("O elemento slides[slideIndex] é null ou undefined.");
+                }
+            }
+
+        }
     </script>
-  </body>
+</body>
+
 </html>
