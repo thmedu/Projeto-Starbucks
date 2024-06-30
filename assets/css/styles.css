@@ -287,14 +287,14 @@ header ul li a:hover {
   
   
   /* Responsivo para telas menores */
-  @media screen and (max-width: 375px) {
+  @media screen and (max-width: 600px) {
     .social {
       flex-direction: column;
       align-items: center;
     }
   
     .social li {
-      margin: 5px 0;
+      margin: 10px 0;
     }
   }
   
@@ -319,7 +319,7 @@ header ul li a:hover {
     width: 100%;
     height: 100%;
     background: #006241;
-    clip-path: circle(375px at right 800px); /* Efeito de clip-path para o círculo */
+    clip-path: circle(600px at right 800px); /* Efeito de clip-path para o círculo */
 }
 
 /* Carousel principal */
@@ -451,8 +451,12 @@ label {
 }
 
 
+
 /* Estilos para telas menores que 768px */
 @media (max-width: 767px) {
+    /* Ajustes gerais para telas menores */
+
+    /* Cabeçalho */
     header {
         padding: 20px;
     }
@@ -479,8 +483,12 @@ label {
     }
 
     .toggle.active {
+        position: fixed;
+        right: 20px;
         background: url('https://starbucks-landing-page.netlify.app/public/images/close.png');
         background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     header ul.navigation.active {
@@ -503,7 +511,7 @@ label {
     }
 
     section {
-        padding: 20px;
+        padding: 20px 20px 120px;
     }
 
     .content {
@@ -511,14 +519,22 @@ label {
         margin-top: 100px;
     }
 
-    .content .textBox,
-    .content .imgBox {
+    .content .textBox {
         max-width: 100%;
-        text-align: center;
+    }
+
+    .content .textBox h2 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
+
+    .content .imgBox {
+        max-width: 90%;
+        justify-content: center;
     }
 
     .content .imgBox img {
-        max-width: 100%;
+        max-width: 350px;
     }
 
     .thumbnails li img {
@@ -526,22 +542,22 @@ label {
     }
 
     .social {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
         background: #006241;
-        z-index: 11;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        right: 0;
+        width: 50px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .circle {
+        clip-path: circle(400px at center bottom);
     }
 }
 
-/* Estilos para telas de 768px a 1090px */
-@media (min-width: 768px) and (max-width: 1090px) {
+/* Estilos para telas de 768px a 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Ajustes gerais para telas médias */
+
     header {
         padding: 20px;
     }
@@ -568,8 +584,12 @@ label {
     }
 
     .toggle.active {
+        position: fixed;
+        right: 20px;
         background: url('https://starbucks-landing-page.netlify.app/public/images/close.png');
         background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 
     header ul.navigation.active {
@@ -592,7 +612,7 @@ label {
     }
 
     section {
-        padding: 20px;
+        padding: 20px 20px 120px;
     }
 
     .content {
@@ -600,14 +620,22 @@ label {
         margin-top: 100px;
     }
 
-    .content .textBox,
+    .content .textBox {
+        max-width: 100%;
+    }
+
+    .content .textBox h2 {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+    }
+
     .content .imgBox {
         max-width: 100%;
-        text-align: center;
+        justify-content: center;
     }
 
     .content .imgBox img {
-        max-width: 100%;
+        max-width: 350px;
     }
 
     .thumbnails li img {
@@ -615,22 +643,22 @@ label {
     }
 
     .social {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
         background: #006241;
-        z-index: 11;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        right: 0;
+        width: 50px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    .circle {
+        clip-path: circle(400px at center bottom);
     }
 }
 
-/* Estilos para telas maiores que 1090px */
-@media (min-width: 1091px) {
+/* Estilos para telas maiores que 991px */
+@media (min-width: 992px) {
+    /* Ajustes gerais para telas grandes */
+
     header {
         padding: 20px;
     }
@@ -640,15 +668,15 @@ label {
     }
 
     .toggle {
-        display: none;
+        display: none; /* Ocultar o toggle em telas grandes */
     }
 
     header ul {
-        display: flex !important;
+        display: flex !important; /* Garantir que o menu seja visível */
     }
 
     header ul.navigation.active {
-        display: flex;
+        display: flex; /* Assegurar que o menu seja visível quando ativo */
         position: static;
         width: auto;
         height: auto;
@@ -658,46 +686,47 @@ label {
     }
 
     header ul li {
-        margin-left: 20px;
+        margin-left: 20px; /* Espaçamento entre os itens de menu */
     }
 
     header ul li a {
-        font-size: 1.2em;
+        font-size: 1.2em; /* Tamanho da fonte dos links do menu */
         margin: 0;
     }
 
     section {
-        padding: 20px;
+        padding: 20px 20px 120px; /* Espaçamento interno da seção principal */
     }
 
     .content {
-        flex-direction: row;
-        margin-top: 0;
+        flex-direction: row; /* Layout em linha para o conteúdo principal */
+        margin-top: 0; /* Remover margem superior */
     }
 
     .content .textBox {
-        max-width: 50%;
+        max-width: 50%; /* Largura máxima da caixa de texto */
     }
 
     .content .textBox h2 {
-        font-size: 3em;
-        margin-bottom: 20px;
+        font-size: 3em; /* Tamanho do título H2 */
+        margin-bottom: 20px; /* Espaçamento inferior do título */
     }
 
     .content .imgBox {
-        max-width: 50%;
-        text-align: right;
+        max-width: 50%; /* Largura máxima da caixa de imagem */
+        justify-content: flex-end; /* Alinhamento à direita */
     }
 
     .content .imgBox img {
-        max-width: 100%;
+        max-width: 100%; /* Largura máxima da imagem */
     }
 
     .thumbnails li img {
-        max-width: 60px;
+        max-width: 60px; /* Largura máxima das miniaturas */
     }
 
     .social {
+        display: block; /* Exibir o bloco de redes sociais */
         position: absolute;
         top: 20px;
         right: 20px;
@@ -706,8 +735,9 @@ label {
         border-radius: 50%;
         background: #006241;
         z-index: 11;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    }
+
+    .circle {
+        clip-path: circle(600px at right 800px); /* Efeito de clip-path para o círculo */
     }
 }
