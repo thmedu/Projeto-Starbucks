@@ -30,6 +30,9 @@ Você pode personalizar este projeto de várias maneiras:
     Imagens: Substitua as imagens na pasta img/ por outras que melhor representem seus produtos ou ideias.
     Estilos: Edite o arquivo styles.css para ajustar as cores, fontes e layout conforme necessário.
     Funcionalidades: Adicione novas funcionalidades ao arquivo script.js para atender às suas necessidades específicas.
+  
+  # Starbucks Landing Page - Versão 1
+![Post minimalista marketing digital roxo branco e azul (3)](https://github.com/thmedu/Projeto-Starbucks/assets/141462806/5e35a39e-2d16-4e75-b84b-7ebf26cca1c6)
 
 # Contribuição
 
