@@ -1,11 +1,15 @@
-let slideIndex = 0;
+// Seleciona os elementos do carrossel
 const slides = document.querySelectorAll('.carousel-item-4');
 const content2 = document.querySelector('.content2');
 const span2 = document.getElementById('span2');
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
 
-function showSlides() {
+let slideIndex = 0;
+let intervalId = null;
+
+// Função para avançar para o próximo slide
+function nextSlide() {
   slideIndex++;
   if (slideIndex >= slides.length) {
     slideIndex = 0;
@@ -13,6 +17,7 @@ function showSlides() {
   changeSlide();
 }
 
+// Função para mostrar o slide atual
 function changeSlide() {
   slides.forEach((slide) => {
     slide.style.display = 'none';
@@ -28,6 +33,7 @@ function changeSlide() {
   span2.style.color = textColor;
 }
 
+// Função para navegar pelos slides
 function navigateSlide(direction) {
   if (direction === 'prev') {
     slideIndex--;
@@ -43,6 +49,34 @@ function navigateSlide(direction) {
   changeSlide();
 }
 
+// Inicia o carrossel automaticamente
+function startCarousel() {
+  intervalId = setInterval(nextSlide, 4000); // Troca de slide a cada 4 segundos (4000 milissegundos)
+}
+
+// Pausa o carrossel
+function stopCarousel() {
+  clearInterval(intervalId);
+}
+
+// Event listeners para controlar o carrossel
+if (prevButton && nextButton) {
+  prevButton.addEventListener('click', () => {
+    stopCarousel();
+    navigateSlide('prev');
+  });
+  nextButton.addEventListener('click', () => {
+    stopCarousel();
+    navigateSlide('next');
+  });
+}
+
+// Inicia o carrossel automaticamente ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+  startCarousel();
+});
+
+// Função para abrir o modal com a imagem
 function openImageModal(imgElement) {
   const modal = document.createElement('div');
   modal.classList.add('modal');
@@ -59,10 +93,86 @@ function openImageModal(imgElement) {
   });
 }
 
-// Iniciar o carrossel
-showSlides();
-setInterval(showSlides, 4000); // Troca de slide a cada 4 segundos (4000 milissegundos)
+// Event listener para pausar o carrossel ao passar o mouse sobre ele
+const carousel = document.querySelector('.carousel');
+if (carousel) {
+  carousel.addEventListener('mouseenter', stopCarousel);
+  carousel.addEventListener('mouseleave', startCarousel);
+}
 
-// Event listeners para mudança de slide
-prevButton.addEventListener('click', () => navigateSlide('prev'));
-nextButton.addEventListener('click', () => navigateSlide('next'));
+// Mostrar o botão de voltar ao topo quando o usuário rolar a página
+let mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// Scroll suave para o topo do documento quando o botão for clicado
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+// Seleciona os elementos da galeria de miniaturas e adiciona listeners
+const thumbnails = document.querySelectorAll('.thumbnails li');
+thumbnails.forEach(thumbnail => {
+  thumbnail.addEventListener('click', () => {
+    const imgElement = thumbnail.querySelector('img');
+    openImageModal(imgElement);
+  });
+});
+
+// Função para alternar o menu
+function toggleMenu() {
+  const navigation = document.querySelector('.navigation');
+  navigation.classList.toggle('active');
+}
+
+// Função para verificar a posição da página e mostrar/ocultar o rodapé
+function checkScrollPosition() {
+  const footer = document.querySelector('.footer');
+  const scrollPosition = window.innerHeight + window.scrollY;
+  const pageHeight = document.body.offsetHeight;
+
+  if (scrollPosition >= pageHeight) {
+      footer.classList.add('active');
+  } else {
+      footer.classList.remove('active');
+  }
+}
+
+// Adicionar evento de scroll para verificar a posição da página
+window.addEventListener('scroll', checkScrollPosition);
+
+// Verificar a visibilidade do rodapé assim que a página carregar
+document.addEventListener('DOMContentLoaded', () => {
+  const footer = document.querySelector('.footer');
+
+  // Função para verificar se o usuário está no final da página
+  function isUserAtBottom() {
+      return window.innerHeight + window.scrollY >= document.body.offsetHeight - footer.offsetHeight;
+  }
+
+  // Função para exibir ou ocultar o rodapé baseado na posição do scroll
+  function toggleFooterVisibility() {
+      if (isUserAtBottom()) {
+          footer.classList.add('visible');
+      } else {
+          footer.classList.remove('visible');
+      }
+  }
+
+  // Adicionar um listener de scroll para verificar a posição do scroll
+  window.addEventListener('scroll', toggleFooterVisibility);
+
+  // Verificar a visibilidade do rodapé assim que a página carregar
+  toggleFooterVisibility();
+});

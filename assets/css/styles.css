@@ -158,46 +158,45 @@ header ul li a:hover {
 
 /* Título H2 dentro da caixa de texto */
 .content .textBox h2 {
-    color: #fff;
-    font-size: 3em;
-    font-weight: 700;
-    line-height: 1.3;
-    
+    color: #fff; /* Cor do texto branco */
+    font-size: 3em; /* Tamanho da fonte */
+    font-weight: 700; /* Negrito */
+    line-height: 1.3; /* Altura da linha */
+    margin-bottom: 20px; /* Espaçamento inferior */
 }
 
 /* Estilo para o span dentro do título H2 */
 .content .textBox h2 span {
-    color: #006241;
-    font-size: 3em;
-    font-weight: 700;
+    color: #006241; /* Cor verde */
+    font-size: 3em; /* Tamanho da fonte */
+    font-weight: 700; /* Negrito */
 }
 
 /* Parágrafo dentro da caixa de texto */
 .content .textBox p {
-    color: #fff;
-    margin-top: 20px; /* Espaçamento superior para o parágrafo */
-    line-height: 2.8;
-
+    color: #fff; /* Cor do texto branco */
+    margin-top: 20px; /* Espaçamento superior */
+    line-height: 2.8; /* Altura da linha */
 }
 
 /* Estilo para o link 'Saiba Mais' */
 .content .textBox a {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px; /* Espaçamento interno maior */
-    background: #006241;
-    color: #fff;
-    border-radius: 40px;
-    letter-spacing: 1px;
-    font-weight: 500;
-    text-decoration: none;
+    display: inline-block; /* Exibir como bloco */
+    margin-top: 20px; /* Espaçamento superior */
+    padding: 12px 24px; /* Espaçamento interno */
+    background: #006241; /* Cor de fundo verde */
+    color: #fff; /* Cor do texto branco */
+    border-radius: 40px; /* Raio do canto arredondado */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    font-weight: 500; /* Peso da fonte */
+    text-decoration: none; /* Remover decoração de link */
     transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
 }
 
 /* Estilo para o hover no botão 'Saiba Mais' */
 .content .textBox a:hover {
-    background: #45a049; /* Cor destacada no hover */
-    color: #fff;
+    background: #45a049; /* Cor de fundo destacada no hover */
+    color: #fff; /* Cor do texto branco */
 }
 
 /* Caixa de imagem dentro do conteúdo principal */
@@ -205,8 +204,8 @@ header ul li a:hover {
     width: 100%; /* Largura total para layout responsivo */
     display: flex;
     justify-content: center; /* Centralizar imagem */
-    padding: 20px 0; /* Espaçamento interno ajustado */
-    margin-top: 50px;
+    padding: 20px 0; /* Espaçamento interno */
+    margin-top: 50px; /* Espaçamento superior */
 }
 
 /* Imagem dentro da caixa de imagem */
@@ -215,34 +214,34 @@ header ul li a:hover {
     height: auto; /* Altura automática para manter a proporção */
 }
 
-/* Lista de miniaturas para o carousel */
+/* Estilização das miniaturas */
 .thumbnails {
-    position: absolute;
-    left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center; /* Centralizar horizontalmente */
-    align-items: center; /* Alinhar verticalmente */
+    position: absolute; /* Posição absoluta para fixar na parte inferior */
+    left: 50%; /* Centralizar horizontalmente */
+    bottom: 20px; /* Distância do fundo da página */
+    transform: translateX(-50%); /* Centralizar horizontalmente */
+    display: flex; /* Usar flexbox para alinhar os itens horizontalmente */
+    justify-content: center; /* Centralizar os itens horizontalmente */
+    align-items: center; /* Alinhar os itens verticalmente */
 }
 
 /* Estilos para cada item da lista de miniaturas */
 .thumbnails li {
-    list-style: none;
-    margin: 0 5px; /* Margem entre os itens de miniatura */
-    cursor: pointer;
-    transition: transform 0.5s ease-in-out;
+    list-style: none; /* Remover marcadores de lista */
+    margin: 0 5px; /* Espaçamento entre os itens de miniatura */
+    cursor: pointer; /* Mostrar cursor ao passar por cima */
+    transition: transform 0.5s ease-in-out; /* Transição suave de transformação */
 }
 
 /* Efeito de hover nas miniaturas */
 .thumbnails li:hover {
-    transform: translateY(-5px); /* Deslocamento suave para cima ao passar o mouse */
+    transform: translateY(-5px); /* Levantar um pouco ao passar o mouse */
 }
 
 /* Imagens dentro dos itens da lista de miniaturas */
 .thumbnails li img {
     width: 50px; /* Largura fixa para as miniaturas */
-    height: auto; /* Altura automática para manter a proporção */
+    height: auto; /* Altura automática para manter proporções */
 }
 
 /* Estilização para o container dos ícones de redes sociais */
@@ -643,7 +642,7 @@ label {
     }
 
     .social {
-        background: #006241;
+        background: #00624105;
         right: 0;
         width: 50px;
         border-top-left-radius: 5px;

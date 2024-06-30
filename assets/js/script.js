@@ -5,32 +5,27 @@ const changeImageAndCircleColor = (imgSrc, bgColor) => {
 }
 
 // Funções para manipular as cores e imagens ao clicar nas miniaturas
+const thumbnailClickHandler = (elementId, textColor, socialBgColor, learnMoreBgColor, imgSrc, circleBgColor) => {
+  document.getElementById("output").style.color = textColor;
+  document.getElementById("social").style.background = socialBgColor;
+  document.getElementById("learnmore").style.background = learnMoreBgColor;
+  changeImageAndCircleColor(imgSrc, circleBgColor);
+}
+
 document.getElementById("changeCreme").addEventListener('click', function() {
-  document.getElementById("output").style.color = '#e2ba48';
-  document.getElementById("social").style.background = '#b36b23';
-  document.getElementById("learnmore").style.background = '#b36b23';
-  changeImageAndCircleColor("./assets/img/cafe-canudo-reto/cafe-laranja.png", '#b36b23');
+  thumbnailClickHandler('changeCreme', '#e2ba48', '#b36b23', '#b36b23', "./assets/img/cafe-canudo-reto/cafe-laranja.png", '#b36b23');
 });
 
 document.getElementById("changeGrozelia").addEventListener('click', function() {
-  document.getElementById("output").style.color = '#ce4326';
-  document.getElementById("social").style.background = '#661c17';
-  document.getElementById("learnmore").style.background = '#661c17';
-  changeImageAndCircleColor("./assets/img/cafe-canudo-reto/café groselha.png", '#661c17');
+  thumbnailClickHandler('changeGrozelia', '#ce4326', '#661c17', '#661c17', "./assets/img/cafe-canudo-reto/café groselha.png", '#661c17');
 });
 
 document.getElementById("changeRosa").addEventListener('click', function() {
-  document.getElementById("output").style.color = '#e78185';
-  document.getElementById("social").style.background = '#901f1b';
-  document.getElementById("learnmore").style.background = '#e78185';
-  changeImageAndCircleColor("./assets/img/cafe-canudo-reto/cafe-rosa.png", '#901f1b');
+  thumbnailClickHandler('changeRosa', '#e78185', '#901f1b', '#e78185', "./assets/img/cafe-canudo-reto/cafe-rosa.png", '#901f1b');
 });
 
 document.getElementById("changeAcai").addEventListener('click', function() {
-  document.getElementById("output").style.color = '#eab052';
-  document.getElementById("social").style.background = '#b0bea4';
-  document.getElementById("learnmore").style.background = '#eab052';
-  changeImageAndCircleColor("./assets/img/cafe-canudo-reto/cafe-verde3.png", '#b0bea4');
+  thumbnailClickHandler('changeAcai', '#eab052', '#b0bea4', '#eab052', "./assets/img/cafe-canudo-reto/cafe-verde3.png", '#b0bea4');
 });
 
 // Mostrar o botão de voltar ao topo quando o usuário rolar a página
@@ -129,6 +124,8 @@ function checkScrollPosition() {
 
 // Adicionar evento de scroll para verificar a posição da página
 window.addEventListener('scroll', checkScrollPosition);
+
+// Verificar a visibilidade do rodapé assim que a página carregar
 document.addEventListener('DOMContentLoaded', function() {
   const footer = document.querySelector('.footer');
 
