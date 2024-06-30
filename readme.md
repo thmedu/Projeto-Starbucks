@@ -1,53 +1,46 @@
-# Starbucks Website 🌟☕ ![Starbucks Logo](https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Starbucks_Corporation_Logo_2011.svg/40px-Starbucks_Corporation_Logo_2011.svg.png)
+# Starbucks Landing Page - Versão 2
+
+Bem-vindo ao projeto da página de destino do Starbucks, versão 2! Este projeto foi criado usando HTML, CSS e JavaScript para simular uma página inicial imaginária para o Starbucks. A página é responsiva, o que significa que ela se adapta automaticamente a diferentes tamanhos de tela, desde smartphones até desktops.
+Funcionalidades
+
+![Post minimalista marketing digital roxo branco e azul](https://github.com/thmedu/Projeto-Starbucks/assets/141462806/a325e27f-6fc9-4ff7-9b70-9870c0a8c1ab)
+
+    Carrossel de Imagens: Destaca produtos ou promoções importantes.
+    Modal de Imagens: Permite visualizar imagens ampliadas com um clique.
+    Menu de Navegação Responsivo: Alternância suave para dispositivos móveis.
+    Integração com Font Awesome: Para ícones modernos e estilosos.
 
 
+# Como Usar
 
-![Post minimalista marketing digital roxo branco e azul (3)](https://github.com/thmedu/Projeto-Starbucks/assets/141462806/2ab296ba-8d6e-4d30-8e82-3167c605666a)
+    Clone o Repositório: Primeiro, clone este repositório em seu computador:
 
+    bash
 
-Este projeto consiste no desenvolvimento de um website para a Starbucks, uma famosa cadeia de cafeterias. O objetivo é apresentar as ofertas da marca, informações sobre seus produtos e serviços de forma atrativa e funcional.
+    git clone https://github.com/seu-usuario/starbucks-landing-page.git
 
+    Abra no Navegador: Abra o arquivo index.html em seu navegador favorito.
 
+    Explore: Navegue pela página para ver como ela se adapta a diferentes tamanhos de tela e explore suas funcionalidades.
 
+# Personalização
 
-## Tecnologias Utilizadas 🛠️
+Você pode personalizar este projeto de várias maneiras:
 
-![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)![Git](https://img.shields.io/badge/Git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+    Imagens: Substitua as imagens na pasta img/ por outras que melhor representem seus produtos ou ideias.
+    Estilos: Edite o arquivo styles.css para ajustar as cores, fontes e layout conforme necessário.
+    Funcionalidades: Adicione novas funcionalidades ao arquivo script.js para atender às suas necessidades específicas.
 
+# Contribuição
 
-## Funcionalidades 🚀
+Contribuições são bem-vindas! Se você deseja melhorar este projeto:
 
-- **Informações da Starbucks:** Apresenta detalhes sobre a história da Starbucks, sua missão e valores.
-- **Produtos e Ofertas:** Exibe os produtos oferecidos pela Starbucks, incluindo café, bebidas especiais, snacks e produtos sazonais.
-- **Navegação Intuitiva:** Permite aos usuários navegar facilmente pelas diferentes seções do website, como menu de bebidas, promoções, história da empresa e localizações.
-- **Imagens dos Produtos:** Inclui imagens atrativas dos produtos da Starbucks para uma experiência visual completa.
+    Faça um Fork: Faça um fork deste repositório.
+    Crie uma Branch: Crie uma branch para a sua feature (git checkout -b minha-feature).
+    Commit Suas Alterações: Commit suas alterações (git commit -m 'Adiciona minha feature').
+    Push para o Repositório: Push para a branch (git push origin minha-feature).
+    Abra um Pull Request: Abra um Pull Request explicando suas mudanças.
 
-## Como Contribuir 🤝
+3 Licença
 
-1. Faça um fork deste repositório clicando no botão "Fork" no canto superior direito.
-2. Clone o fork para o seu ambiente local:
-   ```
-   git clone https://github.com/seu-usuario/starbucks-website.git
-   ```
-3. Crie uma nova branch para sua contribuição:
-   ```
-   git checkout -b feature/sua-contribuicao
-   ```
-4. Faça suas alterações no código, adicionando novas funcionalidades ou melhorando as existentes.
-5. Commit suas alterações:
-   ```
-   git commit -m 'Adicionando sua contribuição'
-   ```
-6. Faça push para a branch:
-   ```
-   git push origin feature/sua-contribuicao
-   ```
-7. Abra um Pull Request neste repositório e descreva suas alterações.
-
-## Autor ✍️
-
-Este projeto foi desenvolvido por [Thomas Nascimento].
-
-
-
+Este projeto é licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
