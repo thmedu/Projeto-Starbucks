@@ -1,4 +1,4 @@
-Starbucks Landing Page - Versão 2
+# Starbucks Landing Page - Versão 2
 
 Bem-vindo ao projeto da página de destino do Starbucks, versão 2! Este projeto foi criado usando HTML, CSS e JavaScript para simular uma página inicial imaginária para o Starbucks. A página é responsiva, o que significa que ela se adapta automaticamente a diferentes tamanhos de tela, desde smartphones até desktops.
 Funcionalidades
@@ -10,7 +10,7 @@ Funcionalidades
     Menu de Navegação Responsivo: Alternância suave para dispositivos móveis.
     Integração com Font Awesome: Para ícones modernos e estilosos.
 
-Estrutura de Arquivos
+# Estrutura de Arquivos
 
 O projeto está organizado da seguinte forma:
 
@@ -43,7 +43,7 @@ Como Usar
 
     Explore: Navegue pela página para ver como ela se adapta a diferentes tamanhos de tela e explore suas funcionalidades.
 
-Personalização
+# Personalização
 
 Você pode personalizar este projeto de várias maneiras:
 
@@ -51,7 +51,7 @@ Você pode personalizar este projeto de várias maneiras:
     Estilos: Edite o arquivo styles.css para ajustar as cores, fontes e layout conforme necessário.
     Funcionalidades: Adicione novas funcionalidades ao arquivo script.js para atender às suas necessidades específicas.
 
-Contribuição
+# Contribuição
 
 Contribuições são bem-vindas! Se você deseja melhorar este projeto:
 
@@ -61,6 +61,6 @@ Contribuições são bem-vindas! Se você deseja melhorar este projeto:
     Push para o Repositório: Push para a branch (git push origin minha-feature).
     Abra um Pull Request: Abra um Pull Request explicando suas mudanças.
 
-Licença
+3 Licença
 
 Este projeto é licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
