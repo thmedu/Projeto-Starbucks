@@ -28,6 +28,32 @@ document.getElementById("changeAcai").addEventListener('click', function() {
   thumbnailClickHandler('changeAcai', '#eab052', '#b0bea4', '#eab052', "./assets/img/cafe-canudo-reto/cafe-verde3.png", '#b0bea4');
 });
 
+// Função para abrir o modal com a imagem
+function openImageModal(imgElement) {
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+
+  const modalContent = document.createElement('img');
+  modalContent.src = imgElement.src;
+  modalContent.alt = imgElement.alt;
+
+  modal.appendChild(modalContent);
+  document.body.appendChild(modal);
+
+  modal.addEventListener('click', () => {
+    modal.remove();
+  });
+}
+
+// Seleciona os elementos da galeria de miniaturas e adiciona listeners
+const thumbnails = document.querySelectorAll('.thumbnails li');
+thumbnails.forEach(thumbnail => {
+  thumbnail.addEventListener('click', () => {
+    const imgElement = thumbnail.querySelector('img');
+    openImageModal(imgElement);
+  });
+});
+
 // Mostrar o botão de voltar ao topo quando o usuário rolar a página
 let mybutton = document.getElementById("myBtn");
 

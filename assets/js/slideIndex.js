@@ -1,6 +1,8 @@
 // Seleciona os elementos do carrossel
-const slides = document.querySelectorAll('.carousel-item-4');
-const content2 = document.querySelector('.content2');
+// Certifique-se de usar let ou const para evitar redeclaração
+let slides = document.querySelectorAll('.carousel-item-4');
+const carouselList = document.querySelector('.carousel-list');
+const thumbnailsList = document.querySelector('.thumbnails');
 const span2 = document.getElementById('span2');
 const prevButton = document.querySelector('.prev');
 const nextButton = document.querySelector('.next');
@@ -19,39 +21,21 @@ function nextSlide() {
 
 // Função para mostrar o slide atual
 function changeSlide() {
-  slides.forEach((slide) => {
-    slide.style.display = 'none';
+  slides.forEach((slide, index) => {
+    if (index === slideIndex) {
+      slide.style.display = 'block';
+      const backgroundColor = slide.dataset.color;
+      content2.style.background = backgroundColor;
+      span2.style.color = slide.dataset.textColor;
+    } else {
+      slide.style.display = 'none';
+    }
   });
-  slides[slideIndex].style.display = 'block';
-
-  const currentSlide = slides[slideIndex];
-  const backgroundColor = currentSlide.dataset.background;
-  const textColor = currentSlide.dataset.color;
-
-  content2.style.background = backgroundColor;
-  content2.style.color = textColor;
-  span2.style.color = textColor;
-}
-
-// Função para navegar pelos slides
-function navigateSlide(direction) {
-  if (direction === 'prev') {
-    slideIndex--;
-    if (slideIndex < 0) {
-      slideIndex = slides.length - 1;
-    }
-  } else if (direction === 'next') {
-    slideIndex++;
-    if (slideIndex >= slides.length) {
-      slideIndex = 0;
-    }
-  }
-  changeSlide();
 }
 
 // Inicia o carrossel automaticamente
 function startCarousel() {
-  intervalId = setInterval(nextSlide, 4000); // Troca de slide a cada 4 segundos (4000 milissegundos)
+  intervalId = setInterval(nextSlide, 1100); // Troca de slide a cada 4 segundos (4000 milissegundos)
 }
 
 // Pausa o carrossel
@@ -60,20 +44,31 @@ function stopCarousel() {
 }
 
 // Event listeners para controlar o carrossel
+carouselList.addEventListener('mouseenter', stopCarousel);
+carouselList.addEventListener('mouseleave', startCarousel);
+
+// Navegação manual pelos slides
 if (prevButton && nextButton) {
   prevButton.addEventListener('click', () => {
     stopCarousel();
-    navigateSlide('prev');
+    slideIndex--;
+    if (slideIndex < 0) {
+      slideIndex = slides.length - 1;
+    }
+    changeSlide();
   });
   nextButton.addEventListener('click', () => {
     stopCarousel();
-    navigateSlide('next');
+    nextSlide();
   });
 }
 
-// Inicia o carrossel automaticamente ao carregar a página
-document.addEventListener('DOMContentLoaded', () => {
-  startCarousel();
+// Event listener para abrir o modal com a imagem
+thumbnailsList.addEventListener('click', (event) => {
+  const imgElement = event.target.closest('img');
+  if (imgElement) {
+    openImageModal(imgElement);
+  }
 });
 
 // Função para abrir o modal com a imagem
@@ -93,86 +88,48 @@ function openImageModal(imgElement) {
   });
 }
 
-// Event listener para pausar o carrossel ao passar o mouse sobre ele
-const carousel = document.querySelector('.carousel');
-if (carousel) {
-  carousel.addEventListener('mouseenter', stopCarousel);
-  carousel.addEventListener('mouseleave', startCarousel);
-}
+// Função para animar o scroll das miniaturas de acordo com o scroll da página
+function animateThumbnailsScroll() {
+  const thumbnails = document.querySelector('.thumbnails');
+  const scrollPosition = window.scrollY;
+  const thumbnailsScrollLeft = scrollPosition / 5; // Ajuste a sensibilidade de acordo com a velocidade desejada
 
-// Mostrar o botão de voltar ao topo quando o usuário rolar a página
-let mybutton = document.getElementById("myBtn");
-
-window.onscroll = function() {
-  scrollFunction();
-};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-// Scroll suave para o topo do documento quando o botão for clicado
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-
-// Seleciona os elementos da galeria de miniaturas e adiciona listeners
-const thumbnails = document.querySelectorAll('.thumbnails li');
-thumbnails.forEach(thumbnail => {
-  thumbnail.addEventListener('click', () => {
-    const imgElement = thumbnail.querySelector('img');
-    openImageModal(imgElement);
+  requestAnimationFrame(() => {
+    thumbnails.scrollLeft = thumbnailsScrollLeft;
   });
-});
-
-// Função para alternar o menu
-function toggleMenu() {
-  const navigation = document.querySelector('.navigation');
-  navigation.classList.toggle('active');
 }
 
-// Função para verificar a posição da página e mostrar/ocultar o rodapé
-function checkScrollPosition() {
-  const footer = document.querySelector('.footer');
-  const scrollPosition = window.innerHeight + window.scrollY;
-  const pageHeight = document.body.offsetHeight;
+// Adiciona um listener de scroll à página
+window.addEventListener('scroll', animateThumbnailsScroll);
 
-  if (scrollPosition >= pageHeight) {
-      footer.classList.add('active');
-  } else {
-      footer.classList.remove('active');
+// Chama a função uma vez ao carregar a página para ajustar as miniaturas
+document.addEventListener('DOMContentLoaded', animateThumbnailsScroll);
+
+// Chama a função para iniciar o carrossel ao carregar a página
+document.addEventListener('DOMContentLoaded', startCarousel);
+// Função para mostrar o slide atual
+function changeSlide() {
+  // Verifica se há apenas um slide
+  if (slides.length === 1) {
+    const clonedSlide = slides[0].cloneNode(true); // Clona o slide existente
+    carouselList.appendChild(clonedSlide); // Adiciona o clone ao final da lista
   }
+
+  // Itera sobre os slides para mostrar ou ocultar conforme necessário
+  slides.forEach((slide, index) => {
+    if (index === slideIndex) {
+      slide.style.display = 'block';
+      const backgroundColor = slide.dataset.color;
+      content2.style.background = backgroundColor;
+      span2.style.color = slide.dataset.textColor;
+    } else {
+      slide.style.display = 'none';
+    }
+  });
 }
 
-// Adicionar evento de scroll para verificar a posição da página
-window.addEventListener('scroll', checkScrollPosition);
-
-// Verificar a visibilidade do rodapé assim que a página carregar
+// Chama a função para iniciar o carrossel ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
-  const footer = document.querySelector('.footer');
-
-  // Função para verificar se o usuário está no final da página
-  function isUserAtBottom() {
-      return window.innerHeight + window.scrollY >= document.body.offsetHeight - footer.offsetHeight;
-  }
-
-  // Função para exibir ou ocultar o rodapé baseado na posição do scroll
-  function toggleFooterVisibility() {
-      if (isUserAtBottom()) {
-          footer.classList.add('visible');
-      } else {
-          footer.classList.remove('visible');
-      }
-  }
-
-  // Adicionar um listener de scroll para verificar a posição do scroll
-  window.addEventListener('scroll', toggleFooterVisibility);
-
-  // Verificar a visibilidade do rodapé assim que a página carregar
-  toggleFooterVisibility();
+  changeSlide(); // Chamada inicial para mostrar o primeiro slide
+  startCarousel(); // Inicia o carrossel
 });
