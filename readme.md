@@ -10,28 +10,8 @@ Funcionalidades
     Menu de Navegação Responsivo: Alternância suave para dispositivos móveis.
     Integração com Font Awesome: Para ícones modernos e estilosos.
 
-# Estrutura de Arquivos
 
-O projeto está organizado da seguinte forma:
-
-lua
-
-|-- index.html         # Página principal HTML
-|-- styles.css         # Estilos CSS da página
-|-- script.js          # Funcionalidades interativas em JavaScript
-|-- img/               # Imagens utilizadas na página
-    |-- logo.png
-    |-- background.jpg
-    |-- ...
-|-- public/            # Recursos estáticos públicos
-    |-- images/        # Imagens públicas
-        |-- menu.png
-        |-- close.png
-|-- fonts/             # Fontes adicionais (ex: Font Awesome)
-    |-- font-awesome/
-|-- README.md          # Você está lendo este arquivo
-
-Como Usar
+# Como Usar
 
     Clone o Repositório: Primeiro, clone este repositório em seu computador:
 
