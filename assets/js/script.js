@@ -2,30 +2,31 @@
 const changeImageAndCircleColor = (imgSrc, bgColor) => {
   document.querySelector('.starbucks').src = imgSrc;
   document.querySelector('.circle').style.background = bgColor;
-}
+};
 
-// Funções para manipular as cores e imagens ao clicar nas miniaturas
-const thumbnailClickHandler = (elementId, textColor, socialBgColor, learnMoreBgColor, imgSrc, circleBgColor) => {
+// Função para manipular as cores e imagens ao clicar nas miniaturas
+const thumbnailClickHandler = (textColor, socialBgColor, learnMoreBgColor, imgSrc, circleBgColor) => {
   document.getElementById("output").style.color = textColor;
   document.getElementById("social").style.background = socialBgColor;
   document.getElementById("learnmore").style.background = learnMoreBgColor;
   changeImageAndCircleColor(imgSrc, circleBgColor);
-}
+};
 
-document.getElementById("changeCreme").addEventListener('click', function() {
-  thumbnailClickHandler('changeCreme', '#e2ba48', '#b36b23', '#b36b23', "./assets/img/cafe-canudo-reto/cafe-laranja.png", '#b36b23');
+// Event listeners para as miniaturas
+document.getElementById("changeCreme").addEventListener('click', () => {
+  thumbnailClickHandler('#e2ba48', '#b36b23', '#b36b23', "./assets/img/cafe-canudo-reto/cafe-laranja.png", '#b36b23');
 });
 
-document.getElementById("changeGrozelia").addEventListener('click', function() {
-  thumbnailClickHandler('changeGrozelia', '#ce4326', '#661c17', '#661c17', "./assets/img/cafe-canudo-reto/café groselha.png", '#661c17');
+document.getElementById("changeGrozelia").addEventListener('click', () => {
+  thumbnailClickHandler('#ce4326', '#661c17', '#661c17', "./assets/img/cafe-canudo-reto/café groselha.png", '#661c17');
 });
 
-document.getElementById("changeRosa").addEventListener('click', function() {
-  thumbnailClickHandler('changeRosa', '#e78185', '#901f1b', '#e78185', "./assets/img/cafe-canudo-reto/cafe-rosa.png", '#901f1b');
+document.getElementById("changeRosa").addEventListener('click', () => {
+  thumbnailClickHandler('#e78185', '#901f1b', '#e78185', "./assets/img/cafe-canudo-reto/cafe-rosa.png", '#901f1b');
 });
 
-document.getElementById("changeAcai").addEventListener('click', function() {
-  thumbnailClickHandler('changeAcai', '#eab052', '#b0bea4', '#eab052', "./assets/img/cafe-canudo-reto/cafe-verde3.png", '#b0bea4');
+document.getElementById("changeAcai").addEventListener('click', () => {
+  thumbnailClickHandler('#eab052', '#b0bea4', '#eab052', "./assets/img/cafe-canudo-reto/cafe-verde3.png", '#b0bea4');
 });
 
 // Função para abrir o modal com a imagem
@@ -84,14 +85,11 @@ const items = document.querySelectorAll('.carousel-item');
 const interval = 5000; // Intervalo em milissegundos (5 segundos)
 
 let currentIndex = 0;
-let timer; // Variável para armazenar o timer do setInterval
+let timer = null; // Variável para armazenar o timer do setInterval
 
 // Função para avançar para o próximo slide
 function nextSlide() {
-  currentIndex++;
-  if (currentIndex >= items.length) {
-    currentIndex = 0;
-  }
+  currentIndex = (currentIndex + 1) % items.length;
   showSlide(currentIndex);
 }
 
@@ -142,9 +140,9 @@ function checkScrollPosition() {
   const pageHeight = document.body.offsetHeight;
 
   if (scrollPosition >= pageHeight) {
-      footer.classList.add('active');
+    footer.classList.add('active');
   } else {
-      footer.classList.remove('active');
+    footer.classList.remove('active');
   }
 }
 
@@ -152,21 +150,21 @@ function checkScrollPosition() {
 window.addEventListener('scroll', checkScrollPosition);
 
 // Verificar a visibilidade do rodapé assim que a página carregar
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   const footer = document.querySelector('.footer');
 
   // Função para verificar se o usuário está no final da página
   function isUserAtBottom() {
-      return window.innerHeight + window.scrollY >= document.body.offsetHeight - footer.offsetHeight;
+    return window.innerHeight + window.scrollY >= document.body.offsetHeight - footer.offsetHeight;
   }
 
   // Função para exibir ou ocultar o rodapé baseado na posição do scroll
   function toggleFooterVisibility() {
-      if (isUserAtBottom()) {
-          footer.classList.add('visible');
-      } else {
-          footer.classList.remove('visible');
-      }
+    if (isUserAtBottom()) {
+      footer.classList.add('visible');
+    } else {
+      footer.classList.remove('visible');
+    }
   }
 
   // Adicionar um listener de scroll para verificar a posição do scroll
@@ -175,3 +173,38 @@ document.addEventListener('DOMContentLoaded', function() {
   // Verificar a visibilidade do rodapé assim que a página carregar
   toggleFooterVisibility();
 });
+// Função para toggle do menu mobile
+function toggleMenu() {
+  const navigation = document.querySelector('.navigation');
+  navigation.classList.toggle('active');
+}
+
+// Função para rolar suavemente até o topo da página
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+// Função para abrir e fechar modal de imagens
+function openImageModal(image) {
+  const modal = document.createElement('div');
+  modal.classList.add('modal');
+  modal.innerHTML = `
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <img src="${image.src}" alt="${image.alt}">
+      </div>
+  `;
+  document.body.appendChild(modal);
+
+  const closeButton = modal.querySelector('.close');
+  closeButton.addEventListener('click', () => {
+      modal.remove();
+  });
+
+  window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+          modal.remove();
+      }
+  });
+}

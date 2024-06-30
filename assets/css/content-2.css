@@ -26,9 +26,10 @@ h2 span {
 
 /* Parágrafos */
 p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 20px;
+  font-size: 1rem; /* Tamanho de fonte ajustado */
+  color: #fff;
+  margin-bottom: 20px; /* Margem inferior reduzida para um espaçamento mais equilibrado */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas para melhor legibilidade */
 }
 
 /* Estilo para botão 'Saiba Mais' */
@@ -39,12 +40,13 @@ p {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  border-radius: 5px;
+  border-radius: 10px;
   transition: background-color 0.3s ease;
 }
 
 .learnmore:hover {
   background-color: #c06804; /* Cor alternativa ao hover */
+  border-radius: 10px;
 }
 
 /* Ícone na seção de conteúdo */
@@ -60,6 +62,9 @@ p {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  margin-bottom: 20px;
+  top: 30px;
+
 }
 
 /* Carrossel */
@@ -147,7 +152,9 @@ a:hover {
 .content2 .textBox2 {
   max-width: 600px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+ top: 30px;
+
 }
 
 .content2 h2 {
@@ -162,12 +169,19 @@ a:hover {
   font-size: 1.5em;
   font-weight: 600;
 }
-
-.content2 p {
-  margin-bottom: 20px;
-  font-size: 18px;
-  color: #ddd;
+.content .textBox p {
+  color: #fff; /* Cor do texto branco */
+  margin-top: 20px; /* Margem superior de 20px */
+  line-height: 1.8; /* Espaçamento entre linhas de 1.8 */
 }
+
+p {
+  font-size: 1rem; /* Tamanho de fonte ajustado */
+  color: #fff;
+  margin-bottom: 20px; /* Margem inferior reduzida para um espaçamento mais equilibrado */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas para melhor legibilidade */
+}
+
 
 .content2 a {
   padding: 12px 24px;
@@ -203,6 +217,7 @@ a:hover {
 }
 
 /* Modal */
+/* Estilos para o modal de imagens */
 .modal {
   position: fixed;
   top: 0;
@@ -213,15 +228,37 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 1000;
 }
 
-.modal img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-  cursor: pointer;
+.modal-content {
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  text-align: center;
+  position: relative;
 }
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #e2ba48; /* Cor de hover */
+}
+
 
 /* Seção de Horário de Funcionamento */
 .time {
@@ -307,6 +344,8 @@ a:hover {
 
   .textBox2 {
     padding: 20px; /* Redimensionar caixa de texto */
+    margin: auto;
+
   }
 
   .carousel-item {
@@ -331,6 +370,7 @@ a:hover {
 
   .textBox2 {
     padding: 10px; /* Ajustar ainda mais o padding da caixa de texto */
+    margin: auto;
   }
 
   .carousel-item {

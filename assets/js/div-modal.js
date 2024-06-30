@@ -15,25 +15,17 @@ function openImageModal(imgElement) {
   });
 }
 
-// Função para rolar suavemente para o topo da página
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
-
 // Seleciona os elementos do carrossel
 const slides = document.querySelectorAll('.carousel-item-4');
 const content2 = document.querySelector('.content2');
 const span2 = document.getElementById('span2');
 
 let slideIndex = 0;
+let intervalId = null;
 
 // Função para avançar para o próximo slide
 function nextSlide() {
-  slideIndex++;
-  if (slideIndex >= slides.length) {
-    slideIndex = 0;
-  }
+  slideIndex = (slideIndex + 1) % slides.length; // Avança para o próximo slide circularmente
   changeSlide();
 }
 
@@ -45,33 +37,26 @@ function changeSlide() {
   slides[slideIndex].style.display = 'block';
 
   const currentSlide = slides[slideIndex];
-  const backgroundColor = currentSlide.dataset.background;
-  const textColor = currentSlide.dataset.color;
+  const backgroundColor = currentSlide.dataset.color;
+  const textColor = currentSlide.dataset.textColor;
 
   content2.style.background = backgroundColor;
-  content2.style.color = textColor;
   span2.style.color = textColor;
 }
 
 // Função para navegar pelos slides
 function navigateSlide(direction) {
   if (direction === 'prev') {
-    slideIndex--;
-    if (slideIndex < 0) {
-      slideIndex = slides.length - 1;
-    }
+    slideIndex = (slideIndex - 1 + slides.length) % slides.length; // Retrocede para o slide anterior circularmente
   } else if (direction === 'next') {
-    slideIndex++;
-    if (slideIndex >= slides.length) {
-      slideIndex = 0;
-    }
+    slideIndex = (slideIndex + 1) % slides.length; // Avança para o próximo slide circularmente
   }
   changeSlide();
 }
 
 // Inicia o carrossel automaticamente
 function startCarousel() {
-  setInterval(nextSlide, 4000); // Troca de slide a cada 4 segundos (4000 milissegundos)
+  intervalId = setInterval(nextSlide, 4000); // Troca de slide a cada 4 segundos (4000 milissegundos)
 }
 
 // Pausa o carrossel
@@ -96,7 +81,8 @@ if (prevButton && nextButton) {
 
 // Inicia o carrossel automaticamente ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
-  startCarousel();
+  changeSlide(); // Mostra o primeiro slide
+  startCarousel(); // Inicia o carrossel
 });
 
 // Seleciona os elementos da galeria de miniaturas e adiciona listeners

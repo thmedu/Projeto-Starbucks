@@ -359,19 +359,28 @@ header ul li a:hover {
 
 /* Estilo para os botões de controle do carousel */
 .buttons button {
-    background-color: #006241;
-    color: white;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #e2ba48;
+    color: #fff;
     border: none;
     padding: 10px 20px;
+    font-size: 16px;
     cursor: pointer;
-    font-size: 20px;
-    border-radius: 30px;
+    border-radius: 5px;
+    display: none;
+    transition: background-color 0.3s ease;
 }
 
+.button:hover {
+    background-color: #b36b23; /* Cor de hover */
+}
 /* Efeito de hover nos botões de controle */
 .buttons button:hover {
     background-color: #004d33;
 }
+
 
 /* Estilização para os formulários */
 input[type=text], 
