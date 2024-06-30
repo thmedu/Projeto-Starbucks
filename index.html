@@ -3,15 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description"
-        content="Starbucks - Café e experiências únicas. Junte-se ao Starbucks Rewards™ para benefícios exclusivos.">
+    <meta name="description" content="Starbucks - Café e experiências únicas. Junte-se ao Starbucks Rewards™ para benefícios exclusivos.">
     <meta name="keywords" content="Starbucks, café, bebidas, Rewards, menu, café da manhã">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starbucks</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-        integrity="HASH_CORRETO" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-v5i/9cUn9mvhAchU8TrdTVgrhFxc3WokVZzVZlQSTKbsfyIbNRt1L1l2P20dQf+UMMKrDcq64ZcUkTp+ZJl4Sw==" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-v5i/9cUn9mvhAchU8TrdTVgrhFxc3WokVZzVZlQSTKbsfyIbNRt1L1l2P20dQf+UMMKrDcq64ZcUkTp+ZJl4Sw==" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
     <link rel="stylesheet" href="./assets/css/content-2.css">
@@ -22,7 +18,7 @@
         <div class="circle"></div>
         <header>
             <a href="#home"><img src="./assets/img/logo.png" class="logo" alt="Starbucks Logo"></a>
-            <div class="toggle" onclick="toggleMenu()"></div>
+            <div class="toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
             <ul class="navigation">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#menu">Menu</a></li>
@@ -35,14 +31,11 @@
         </header>
 
         <div class="content">
-            <button onclick="topFunction()" id="myBtn" title="Clique para ir ao topo" class="button">Topo</button>
+            <button onclick="topFunction()" id="myBtn" title="Clique para ir ao topo" class="button"><i class="fas fa-arrow-up"></i> Topo</button>
             <div class="textBox">
                 <h2>NÃO É APENAS CAFÉ<br />É <span id="output">STARBUCKS</span></h2>
-
-                <p>Faça cada gole mais recompensador. Junte-se ao Starbucks Rewards™ para ganhar benefícios de nível
-                    Gold como bebidas e alimentos gratuitos, obtenha recargas gratuitas, pague e peça com seu telefone,
-                    e mais.</p>
-                <a href="#" id="learnmore">Saiba Mais</a>
+                <p>Faça cada gole mais recompensador. Junte-se ao Starbucks Rewards™ para ganhar benefícios de nível Gold como bebidas e alimentos gratuitos, obtenha recargas gratuitas, pague e peça com seu telefone, e mais.</p>
+                <a href="#" id="learnmore">Saiba Mais <i class="fas fa-chevron-right"></i></a>
             </div>
 
             <div class="imgBox">
@@ -52,69 +45,58 @@
 
         <ul class="thumbnails">
             <li>
-                <img id="changeCreme" src="./assets/img/cafe-canudo-reto/cafe-laranja.png"
-                    onclick="imageSlider('./assets/img/cafe-canudo-reto/cafe-laranja.png'); changeCircleColor('#e2ba48');"
-                    alt="Café Laranja">
+                <img id="changeCreme" src="./assets/img/cafe-canudo-reto/cafe-laranja.png" onclick="imageSlider('./assets/img/cafe-canudo-reto/cafe-laranja.png'); changeCircleColor('#e2ba48');" alt="Café Laranja">
             </li>
-
             <li>
-                <img id="changeGrozelia" src="./assets/img/cafe-canudo-reto/café groselha.png"
-                    onclick="imageSlider('./assets/img/cafe-canudo-reto/café groselha.png'); changeCircleColor('#ce4326');"
-                    alt="Café Groselha">
+                <img id="changeGrozelia" src="./assets/img/cafe-canudo-reto/café groselha.png" onclick="imageSlider('./assets/img/cafe-canudo-reto/café groselha.png'); changeCircleColor('#ce4326');" alt="Café Groselha">
             </li>
-
             <li>
-                <img id="changeAcai" src="./assets/img/cafe-canudo-reto/cafe-verde3.png"
-                    onclick="imageSlider('./assets/img/cafe-canudo-reto/cafe-verde3.png'); changeCircleColor('#30252b');"
-                    alt="Café Verde">
+                <img id="changeAcai" src="./assets/img/cafe-canudo-reto/cafe-verde3.png" onclick="imageSlider('./assets/img/cafe-canudo-reto/cafe-verde3.png'); changeCircleColor('#30252b');" alt="Café Verde">
             </li>
-
             <li>
-                <img id="changeRosa" src="./assets/img/cafe-canudo-reto/cafe-rosa.png"
-                    onclick="imageSlider('./assets/img/cafe-canudo-reto/cafe-rosa.png'); changeCircleColor('#f9d6d9');"
-                    alt="Café Rosa">
+                <img id="changeRosa" src="./assets/img/cafe-canudo-reto/cafe-rosa.png" onclick="imageSlider('./assets/img/cafe-canudo-reto/cafe-rosa.png'); changeCircleColor('#f9d6d9');" alt="Café Rosa">
             </li>
         </ul>
 
         <div class="social-container">
             <ul class="social" id="social">
-                <li><a href="https://www.facebook.com/Starbucks/" target="_blank"><i
-                            class="fab fa-facebook"></i></a></li>
+                <li><a href="https://www.facebook.com/Starbucks/" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                 <li><a href="https://twitter.com/Starbucks" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/starbucks_sa" target="_blank"><i
-                            class="fab fa-instagram"></i></a></li>
+                <li><a href="https://www.instagram.com/starbucks_sa" target="_blank"><i class="fab fa-instagram"></i></a></li>
             </ul>
         </div>
-
     </section>
 
     <section class="content-2" id="menu">
         <div class="content2">
             <div class="textBox2">
                 <h2>UMA CHÁVENA <br />DE <span class="span">CAFÉ PERFEITA</span></h2>
-                <p>Desde o nosso início em 1971, buscamos a perfeição em cada xícara. Nossas torrefações meticulosas
-                    garantem que cada lote de café ofereça o máximo de sabor. Nossos baristas dedicados preparam cada
-                    bebida artesanalmente, atendendo aos gostos individuais de nossos clientes.</p>
-                <a href="#" class="learnmore">Descubra Mais</a>
+                <p>Desde o nosso início em 1971, buscamos a perfeição em cada xícara. Nossas torrefações meticulosas garantem que cada lote de café ofereça o máximo de sabor. Nossos baristas dedicados preparam cada bebida artesanalmente, atendendo aos gostos individuais de nossos clientes.</p>
             </div>
             <div class="carousel">
                 <div class="carousel-list">
                     <div class="carousel-item-4" data-color="#c9bdb9">
-                        <img src="./assets/img/sem canudo/cafe-chocolate.png" alt="Café Chocolate"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/sem canudo/cafe-chocolate.png" alt="Café Chocolate" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item-4" data-color="#f2210b">
-                        <img src="./assets/img/sem canudo/cafe-tutti.png" alt="Café Tutti"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/sem canudo/cafe-tutti.png" alt="Café Tutti" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item-4" data-color="#e2ba48">
-                        <img src="./assets/img/sem canudo/café-amarelo.png" alt="Café Amarelo"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/sem canudo/café-amarelo.png" alt="Café Amarelo" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item-4" data-color="#36a2eb">
-                        <img src="./assets/img/sem canudo/cafe-azul.png" alt="Café Azul"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/sem canudo/cafe-azul.png" alt="Café Azul" onclick="openImageModal(this)">
                     </div>
+                    <div class="carousel-item-4" data-color="#36a2eb">
+                        <img src="./assets/img/sem canudo/cafe-azul.png" alt="Café Azul" onclick="openImageModal(this)">
+                    </div>
+                    <div class="carousel-item-4" data-color="#36a2eb">
+                        <img src="./assets/img/sem canudo/cafe-azul.png" alt="Café Azul" onclick="openImageModal(this)">
+                    </div>
+                    
+                </div>
+                <div class="textBox2">
+                    <a href="#" class="learnmore">Descubra Mais <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>
@@ -124,83 +106,68 @@
         <div class="content2">
             <div class="textBox2">
                 <h2>Bebidas <span class="span"> Refreshers® </span></h2>
-                <p>Descubra os Refreshers® da Starbucks®, bebidas que combinam frescor e sabor de forma única. Desde
-                    1971, nossos grãos são cuidadosamente selecionados e torrados para oferecer a máxima qualidade.
-                    Nossos baristas são especialistas em preparar cada bebida de forma artesanal, garantindo uma
-                    experiência refrescante a cada gole.</p>
-                <a href="#" class="learnmore">Saiba Mais</a>
+                <p>Descubra os Refreshers® da Starbucks®, bebidas que combinam frescor e sabor de forma única. Desde 1971, nossos grãos são cuidadosamente selecionados e torrados para oferecer a máxima qualidade. Nossos baristas são especialistas em preparar cada bebida de forma artesanal, garantindo uma experiência refrescante a cada gole.</p>
             </div>
             <div class="carousel">
                 <div class="carousel-list">
                     <div class="carousel-item cafe-chocolate" data-background="#51341F" data-color="#c9bdb9">
-                        <img src="./assets/img/Refreshers/download-removebg-preview.png" alt="Café Chocolate"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/Refreshers/download-removebg-preview.png" alt="Café Chocolate" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item cafe-tutti" data-background="#f2210b" data-color="#f2210b">
-                        <img src="./assets/img/Refreshers/download__1_-removebg-preview.png" alt="Café Tutti"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/Refreshers/download__1_-removebg-preview.png" alt="Café Tutti" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item cafe-amarelo" data-background="#E2BA48" data-color="#c06804">
-                        <img src="./assets/img/Refreshers/download__2_-removebg-preview.png" alt="Café Amarelo"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/Refreshers/download__2_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item cafe-amarelo" data-background="#E2BA48" data-color="#c06804">
-                        <img src="./assets/img/Refreshers/download__3_-removebg-preview.png" alt="Café Amarelo"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/Refreshers/download__3_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item cafe-amarelo" data-background="#E2BA48" data-color="#c06804">
-                        <img src="./assets/img/Refreshers/download__4_-removebg-preview.png" alt="Café Amarelo"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/Refreshers/download__4_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item cafe-amarelo" data-background="#E2BA48" data-color="#c06804">
-                        <img src="./assets/img/Refreshers/images__1_-removebg-preview.png" alt="Café Amarelo"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/Refreshers/images__1_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
                     </div>
+                </div>
+                <div class="textBox2">
+                    <a href="#" class="learnmore">Descubra Mais <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="content-4" id="menu">
+    <section class="content-4" id="menu2">
         <div class="content2">
             <div class="textBox2">
                 <h2>Café com <span class="span"> Sanduíches e wraps </span></h2>
-                <p>Explore nosso delicioso menu de café da manhã, incluindo sanduíches e wraps preparados com
-                    ingredientes frescos e cuidadosamente selecionados. Desde nossa fundação em 1971, priorizamos a
-                    qualidade de cada ingrediente, garantindo uma experiência única a cada mordida. Nossos baristas
-                    estão à disposição para preparar seu café da manhã da maneira que você preferir.</p>
-                <a href="#" class="learnmore">Saiba Mais</a>
+                <p>Explore nosso delicioso menu de café da manhã, incluindo sanduíches e wraps preparados com ingredientes frescos e cuidadosamente selecionados. Desde nossa fundação em 1971, priorizamos a qualidade de cada ingrediente, garantindo uma experiência única a cada mordida. Nossos baristas estão à disposição para preparar seu café da manhã da maneira que você preferir.</p>
             </div>
             <div class="carousel">
                 <div class="carousel-list">
                     <div class="carousel-item-4" data-color="#c9bdb9">
-                        <img src="./assets/img/café da manhã/download__9_-removebg-preview.png" alt="Café Chocolate"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/café da manhã/download__9_-removebg-preview.png" alt="Café Chocolate" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item-4" data-color="#f2210b">
-                        <img src="./assets/img/café da manhã/download__5_-removebg-preview.png" alt="Café Tutti"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/café da manhã/download__5_-removebg-preview.png" alt="Café Tutti" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item-4" data-color="#c06804">
-                        <img src="./assets/img/café da manhã/download__6_-removebg-preview.png" alt="Café Amarelo"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/café da manhã/download__6_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item-4" data-color="#c06804">
-                        <img src="./assets/img/café da manhã/download__7_-removebg-preview.png" alt="Café Amarelo"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/café da manhã/download__7_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item-4" data-color="#c06804">
-                        <img src="./assets/img/café da manhã/download__8_-removebg-preview.png" alt="Café Amarelo"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/café da manhã/download__8_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item-4" data-color="#c06804">
-                        <img src="./assets/img/café da manhã/download__9_-removebg-preview.png" alt="Café Amarelo"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/café da manhã/download__9_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
                     </div>
                     <div class="carousel-item-4" data-color="#c06804">
-                        <img src="./assets/img/café da manhã/download__10_-removebg-preview.png" alt="Café Amarelo"
-                            onclick="openImageModal(this)">
+                        <img src="./assets/img/café da manhã/download__10_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
                     </div>
+                </div>
+                <div class="textBox2">
+                    <a href="#" class="learnmore">Descubra Mais <i class="fas fa-chevron-right"></i></a>
                 </div>
             </div>
         </div>
@@ -235,18 +202,12 @@
             <form id="my-form" action="https://formspree.io/f/xdoveeaj" method="POST">
                 <label for="fname">Primeiro Nome</label>
                 <input type="text" id="fname" name="firstname" placeholder="Seu nome.." required>
-
                 <label for="lname">Último Nome</label>
                 <input type="text" id="lname" name="lastname" placeholder="Seu sobrenome.." required>
-
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" pattern="[^@]*@[^@]*" required
-                    placeholder="Seu endereço de e-mail..">
-
+                <input type="email" id="email" name="email" pattern="[^@]*@[^@]*" required placeholder="Seu endereço de e-mail..">
                 <label for="subject">Assunto</label>
-                <textarea id="subject" name="subject" placeholder="Escreva algo.." style="height:200px"
-                    required></textarea>
-
+                <textarea id="subject" name="subject" placeholder="Escreva algo.." style="height:200px" required></textarea>
                 <input type="submit" value="Enviar" id="my-form-button">
             </form>
         </div>
