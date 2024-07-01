@@ -173,38 +173,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Verificar a visibilidade do rodapé assim que a página carregar
   toggleFooterVisibility();
 });
-// Função para toggle do menu mobile
-function toggleMenu() {
-  const navigation = document.querySelector('.navigation');
-  navigation.classList.toggle('active');
-}
-
-// Função para rolar suavemente até o topo da página
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-
-// Função para abrir e fechar modal de imagens
-function openImageModal(image) {
-  const modal = document.createElement('div');
-  modal.classList.add('modal');
-  modal.innerHTML = `
-      <div class="modal-content">
-          <span class="close">&times;</span>
-          <img src="${image.src}" alt="${image.alt}">
-      </div>
-  `;
-  document.body.appendChild(modal);
-
-  const closeButton = modal.querySelector('.close');
-  closeButton.addEventListener('click', () => {
-      modal.remove();
-  });
-
-  window.addEventListener('click', (event) => {
-      if (event.target === modal) {
-          modal.remove();
-      }
-  });
-}
