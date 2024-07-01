@@ -345,7 +345,6 @@ p {
   .textBox2 {
     padding: 20px; /* Redimensionar caixa de texto */
     margin: auto;
-
   }
 
   .carousel-item {
@@ -362,6 +361,10 @@ p {
 @media only screen and (max-width: 480px) {
   body {
     font-size: 12px; /* Reduzir ainda mais o tamanho da fonte */
+  }
+
+  h2 {
+    font-size: 1.8rem; /* Reduzir o tamanho do título padrão */
   }
 
   .content2 h2 {
