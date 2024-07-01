@@ -1,3 +1,34 @@
+/* Responsividade para dispositivos móveis */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* Reduzir o tamanho da fonte para melhor legibilidade */
+  }
+
+  h2 {
+    font-size: 2rem; /* Reduzir o tamanho do título padrão */
+  }
+
+  .content2 h2 {
+    font-size: 3rem; /* Ajustar tamanho do título em conteúdo específico */
+  }
+
+  header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .content {
+    padding: 80px 10%;
+  }
+
+  .time .day {
+    margin: 10px 0;
+  }
+
+  .carousel {
+    flex-direction: column;
+  }
+}
 
 /* Responsividade para smartphones */
 @media only screen and (max-width: 480px) {
@@ -26,16 +57,28 @@
   .modal img {
     max-height: 70vh; /* Reduzir altura máxima da imagem no modal */
   }
+
+  .content .textBox h2 {
+    font-size: 2em;
+  }
+
+  .content .textBox p {
+    font-size: 1em;
+  }
+
+  .content .imgBox img {
+    width: 100%;
+  }
+
+  .time .day h3 {
+    font-size: 1.2em;
+  }
+
+  .time .info {
+    font-size: 1em;
+  }
+
+  .section2 .container {
+    padding: 20px;
+  }
 }
-/* Responsividade para dispositivos móveis */
-@media only screen and (max-width: 768px) {
-  body {
-    font-size: 14px; /* Reduzir o tamanho da fonte para melhor legibilidade */
-  }
-
-  h2 {
-    font-size: 2rem; /* Reduzir o tamanho do título padrão */
-  }
-
-  .content2 h2 {
-    font-size: 3rem; /* Ajustar tamanho do título em conteúdo específico
