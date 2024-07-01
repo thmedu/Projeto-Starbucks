@@ -1,748 +1,331 @@
 /* Importando a fonte Poppins do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-/* Estilos gerais para todos os elementos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif; /* Definindo Poppins como fonte padrão */
-}
-
-/* Corpo da página */
+/* Reset padrão e estilos globais */
 body {
-    overflow-x: hidden; /* Ocultar barra de rolagem horizontal */
-    background-color: #15312a;
-    color: #fff; /* Cor padrão de texto */
+  font-family: 'Poppins', Arial, sans-serif; /* Usando Poppins como fonte principal */
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
-/* Seções principais */
-section {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding: 50px 20px; /* Espaçamento interno reduzido */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #15312a;
-    color: #fff;
-    background-size: cover; /* Cobrir todo o espaço disponível */
-    background-position: center; /* Centralizar a imagem */
-    background-repeat: no-repeat; /* Não repetir a imagem */
+/* Título H2 */
+h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 20px;
 }
 
-/* Seção específica para o conteúdo secundário */
-.section2 {
-    width: 100%;
-    min-height: 80vh;
-    padding: 30px 20px; /* Espaçamento interno reduzido */
-    background: #242424;
-    color: #fff;
+/* Span dentro do título H2 */
+h2 span {
+  color: #e2ba48; /* Cor do span */
 }
 
-/* Área à direita da seção secundária */
-.section2right {
-    width: 55%;
-    min-height: 80vh;
-    padding: 30px;
-    background: #fff;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+/* Parágrafos */
+p {
+  font-size: 1rem; /* Tamanho de fonte ajustado */
+  color: #fff;
+  margin-bottom: 20px; /* Margem inferior reduzida para um espaçamento mais equilibrado */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas para melhor legibilidade */
 }
 
-/* Título da seção secundária */
-.section2heading {
-    font-weight: 800;
-    font-size: 3.5rem; /* Tamanho do título ajustado */
-    text-align: center;
-    margin-bottom: 20px;
+/* Estilo para botão 'Saiba Mais' */
+.learnmore, .learnmore:hover {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e2ba48;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
 }
 
-/* Estilo para o span dentro da seção 2 */
-.span2 {
-    font-weight: 300;
-    font-size: 1.2rem; /* Ajuste no tamanho do texto */
-    text-indent: 0.5px; /* Ajuste mínimo no recuo do texto */
+.learnmore:hover {
+  background-color: #c06804; /* Cor alternativa ao hover */
 }
 
-/* Estilos para o cabeçalho */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px 20px; /* Espaçamento interno ajustado */
-    display: flex;
-    align-items: center;
-    background: rgb(41 127 99 / 27%);
-    z-index: 1000;
-    backdrop-filter: drop-shadow(2px 4px 6px black);
-    color: #000;
+/* Ícone na seção de conteúdo */
+.section2heading::before {
+  font-family: 'Font Awesome 5 Free';
+  content: "\f128"; /* Ícone de dúvida */
+  margin-right: 10px;
+  color: #e2ba48;
 }
 
-/* Estilos para o logo no cabeçalho */
-header .logo {
-    max-width: 60px; /* Largura máxima do logo reduzida */
+/* Caixa de texto no conteúdo secundário */
+.textBox2 {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+  top: 30px;
 }
 
-/* Estilos para os links no cabeçalho */
-header ul {
-    display: flex;
-    align-items: center;
-    flex-grow: 1; /* Ocupa o espaço disponível */
-    justify-content: center; /* Centraliza os links horizontalmente */
-    margin: 0; /* Remove margem padrão */
-    padding: 0; /* Remove padding padrão */
-}
-
-header ul li {
-    list-style: none;
-    margin-left: 20px; /* Espaçamento entre os itens de menu */
-}
-
-header ul li a {
-    color: #fff; /* Cor do texto */
-    font-weight: 600;
-    text-decoration: none;
-    transition: color 0.3s ease; /* Transição suave de cor */
-    padding: 10px 15px; /* Espaçamento interno dos links reduzido */
-    display: inline-block; /* Para alinhar centralmente */
-}
-
-/* Estilos de hover para os links no cabeçalho */
-header ul li a:hover {
-    color: #45a049; /* Cor destacada no hover */
-}
-
-/* Botão para rolar para o topo */
-#myBtn {
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 99;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    background-color: #006241;
-    color: white;
-    cursor: pointer;
-    padding: 15px;
-    border-radius: 50px; /* Borda arredondada */
-}
-
-/* Estilização do botão ao passar o mouse */
-#myBtn:hover {
-    background-color: #45a049; /* Cor destacada no hover */
-}
-
-/* Estilos gerais para o conteúdo */
-.content {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    text-align: justify;
-    padding: 20px 10px; /* Espaçamento interno ajustado */
-}
-
-/* Caixa de texto no conteúdo principal */
-.content .textBox {
-    position: relative;
-    max-width: 600px;
-}
-
-/* Título H2 dentro da caixa de texto */
-.content .textBox h2 {
-    color: #fff; /* Cor do texto branco */
-    font-size: 2.5rem; /* Tamanho da fonte reduzido */
-    font-weight: 700; /* Negrito */
-    line-height: 1.3; /* Altura da linha */
-    margin-bottom: 20px; /* Espaçamento inferior */
-}
-
-/* Estilo para o span dentro do título H2 */
-.content .textBox h2 span {
-    color: #006241; /* Cor verde */
-}
-
-/* Parágrafo dentro da caixa de texto */
-.content .textBox p {
-    color: #fff; /* Cor do texto branco */
-    margin-top: 20px; /* Espaçamento superior */
-    line-height: 1.8; /* Altura da linha ajustada */
-}
-
-/* Estilo para o link 'Saiba Mais' */
-.content .textBox a {
-    display: inline-block; /* Exibir como bloco */
-    margin-top: 20px; /* Espaçamento superior */
-    padding: 12px 24px; /* Espaçamento interno */
-    background: #006241; /* Cor de fundo verde */
-    color: #fff; /* Cor do texto branco */
-    border-radius: 40px; /* Raio do canto arredondado */
-    letter-spacing: 1px; /* Espaçamento entre letras */
-    font-weight: 500; /* Peso da fonte */
-    text-decoration: none; /* Remover decoração de link */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transições suaves */
-}
-
-/* Estilo para o hover no botão 'Saiba Mais' */
-.content .textBox a:hover {
-    background: #45a049; /* Cor de fundo destacada no hover */
-}
-
-/* Caixa de imagem dentro do conteúdo principal */
-.content .imgBox {
-    width: 100%; /* Largura total para layout responsivo */
-    display: flex;
-    justify-content: center; /* Centralizar imagem */
-    padding: 20px 0; /* Espaçamento interno */
-    margin-top: 50px; /* Espaçamento superior */
-}
-
-/* Imagem dentro da caixa de imagem */
-.content .imgBox img {
-    max-width: 100%; /* Largura máxima da imagem */
-    height: auto; /* Altura automática para manter a proporção */
-}
-
-/* Estilização das miniaturas */
-.thumbnails {
-    position: absolute;
-    left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: auto;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-}
-
-.thumbnails li {
-    list-style: none;
-    margin: 0 8px; /* Espaçamento entre as miniaturas */
-    cursor: pointer;
-    transition: transform 0.2s ease; /* Transição suave */
-}
-
-.thumbnails li img {
-    width: 60px; /* Tamanho das miniaturas */
-    height: auto;
-    border-radius: 50%; /* Borda arredondada */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    transition: transform 0.2s ease; /* Transição suave */
-}
-
-.thumbnails li img:hover {
-    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
-}
-/* Estilização para o container dos ícones de redes sociais */
-.social-container {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 20px; /* Ajuste a posição da borda esquerda conforme necessário */
-    z-index: 999; /* Garante que os ícones fiquem acima do conteúdo rolável */
-  }
-  
-  /* Estilização para as redes sociais */
-  .social {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column; /* Mostra os ícones verticalmente */
-    align-items: center; /* Centraliza horizontalmente */
-  }
-  
-  .social li {
-    margin-bottom: 10px; /* Espaçamento entre os ícones */
-  }
-  
-  .social a {
-    display: block;
-    width: 40px;
-    height: 40px;
-    font-size: 24px;
-    color: #fff;
-    text-align: center;
-    line-height: 40px;
-    border-radius: 50%;
-    background-color: #333;
-    transition: background-color 0.3s ease;
-  }
-  
-  .social a:hover {
-    background-color: #555;
-  }
-  
-  
-  /* Responsivo para telas menores */
-  @media screen and (max-width: 600px) {
-    .social {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .social li {
-      margin: 10px 0;
-    }
-  }
-  
-/* Estilos para o contêiner do carrossel */
-.carousel-item-4 {
-    width: 100%; /* Garante que cada item do carrossel ocupe toda a largura disponível */
-    overflow: hidden; /* Impede que a imagem saia do limite do item do carrossel */
-  }
-  
-  /* Estilos para as imagens dentro de cada item do carrossel */
-  .carousel-item-4 img {
-    width: 100%; /* Garante que a imagem ocupe toda a largura do item do carrossel */
-    height: auto; /* Permite que a altura seja ajustada automaticamente para manter a proporção */
-    display: block; /* Garante que a imagem se comporte como um bloco */
-  }
-  
-/* Estilo para o círculo de fundo */
-.circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #006241;
-    clip-path: circle(600px at right 800px); /* Efeito de clip-path para o círculo */
-}
-
-/* Carousel principal */
+/* Carrossel */
 .carousel {
-    max-width: 100%;
-    overflow: hidden;
-    position: relative;
+  margin-top: 30px;
+  overflow: hidden;
 }
 
-/* Lista de itens do carousel */
-.list {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+.carousel-list {
+  display: flex;
+  transition: transform 0.5s ease;
+  margin-left: -20px; /* Ajuste para compensar a margem negativa do primeiro item */
 }
 
-/* Estilo para cada item do carousel */
-.item {
-    min-width: 100%;
-    flex: 0 0 auto;
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
+.carousel-item {
+  flex: 0 0 calc(25% - 20px); /* Calcula o tamanho do item descontando a margem direita */
+  margin-right: 20px;
+  cursor: pointer;
 }
 
-/* Imagem dentro de cada item do carousel */
-.item img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px; /* Espaçamento inferior da imagem */
+.carousel-item img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  transition: transform 0.3s ease; /* Adiciona uma transição suave para a imagem */
 }
 
-/* Botões de controle para o carousel */
-.buttons {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
+.carousel-item:hover img {
+  transform: scale(1.1); /* Efeito de escala ao passar o mouse sobre a imagem */
 }
 
-/* Estilo para os botões de controle do carousel */
-.buttons button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #e2ba48;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    display: none;
-    transition: background-color 0.3s ease;
+/* Seleção de texto personalizada */
+::selection {
+  background-color: #ff6f61;
+  color: #fff;
 }
 
-.button:hover {
-    background-color: #b36b23; /* Cor de hover */
-}
-/* Efeito de hover nos botões de controle */
-.buttons button:hover {
-    background-color: #004d33;
-}
-
-
-/* Estilização para os formulários */
-input[type=text], 
-input[type=email], 
-select, 
-textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
+/* Estilo padrão para links */
+a {
+  text-decoration: none;
+  color: #ff6f61;
+  transition: color 0.3s ease;
 }
 
-/* Estilização para o botão de envio no formulário */
-input[type=submit] {
-    background-color: #51341F;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+a:hover {
+  color: #e65f52;
 }
 
-/* Efeito de hover no botão de envio do formulário */
-input[type=submit]:hover {
-    background-color: #45a049;
+/* Conteúdo 2, 3, 4 (seções principais) */
+.content-2,
+.content-3,
+.content-4 {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #15312a;
+  color: #fff;
+  text-align: center;
+  background-image: url('../img/pngegg (5).png'); /* Caminho da sua imagem de fundo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Estilização para os rótulos nos formulários */
-label {
-    font-weight: 700;
-    color: #006241;
+/* Conteúdo específico 2 */
+.content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #242424;
+  color: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 1200px;
+  margin: 50px auto;
 }
 
-/* Estilização para o container que envolve o formulário */
-.container {
-    border-radius: 5px;
-    background-color: #fff;
-    padding: 40px;
+.content2 .textBox2 {
+  max-width: 600px;
+  text-align: center;
+  margin-bottom: 20px;
+  top: 30px;
 }
 
-/* Estilo para o rodapé */
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: -100px; /* Começa fora da tela */
-    width: 100%;
-    background-color: #242424;
-    color: #fff; /* Cor do texto mais escura para melhor legibilidade */
-    text-align: center;
-    padding: 10px 0; /* Aumentei o padding para 20px */
-    font-weight: 500; /* Reduzi o peso da fonte para torná-la mais leve */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte mais moderna */
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil na parte inferior */
-    transition: bottom 0.3s ease; /* Transição suave para a animação */
+.content2 h2 {
+  font-size: 4em;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 10px;
 }
 
-.footer.active {
-    bottom: 0; /* Aparece no final da página */
+.content2 #span2 {
+  color: #ff6f61;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 
-.footer::before {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: #fff; /* Linha decorativa */
-    color: #fff; /* Cor do texto mais escura para melhor legibilidade */
-    margin: 10px 0;
+.content .textBox p {
+  color: #fff; /* Cor do texto branco */
+  margin-top: 20px; /* Margem superior de 20px */
+  line-height: 1.8; /* Espaçamento entre linhas de 1.8 */
 }
 
-
-
-/* Estilos para telas menores que 768px */
-@media (max-width: 767px) {
-    /* Ajustes gerais para telas menores */
-
-    /* Cabeçalho */
-    header {
-        padding: 20px;
-    }
-
-    header .logo {
-        max-width: 60px;
-    }
-
-    header ul {
-        display: none;
-    }
-
-    .toggle {
-        position: relative;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        background: url('https://starbucks-landing-page.netlify.app/public/images/menu.png');
-        background-size: 30px;
-        background-position: center;
-        background-repeat: no-repeat;
-        filter: invert(1);
-        z-index: 11;
-    }
-
-    .toggle.active {
-        position: fixed;
-        right: 20px;
-        background: url('https://starbucks-landing-page.netlify.app/public/images/close.png');
-        background-size: 25px;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    header ul.navigation.active {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: #fff;
-        z-index: 10;
-    }
-
-    header ul li a {
-        font-size: 1.5em;
-        margin: 5px 0;
-    }
-
-    section {
-        padding: 20px 20px 120px;
-    }
-
-    .content {
-        flex-direction: column;
-        margin-top: 100px;
-    }
-
-    .content .textBox {
-        max-width: 100%;
-    }
-
-    .content .textBox h2 {
-        font-size: 2.5em;
-        margin-bottom: 15px;
-    }
-
-    .content .imgBox {
-        max-width: 90%;
-        justify-content: center;
-    }
-
-    .content .imgBox img {
-        max-width: 350px;
-    }
-
-    .thumbnails li img {
-        max-width: 50px;
-    }
-
-    .social {
-        background: #rgb(0 0 0 / 0%);
-        right: 0;
-        width: 50px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-    }
-
-    .circle {
-        clip-path: circle(400px at center bottom);
-    }
+.content2 a {
+  padding: 12px 24px;
+  background-color: #ff6f61;
+  color: #fff;
+  border-radius: 40px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
 }
 
-/* Estilos para telas de 768px a 991px */
-@media (min-width: 768px) and (max-width: 991px) {
-    /* Ajustes gerais para telas médias */
-
-    header {
-        padding: 20px;
-    }
-
-    header .logo {
-        max-width: 60px;
-    }
-
-    header ul {
-        display: none;
-    }
-
-    .toggle {
-        position: relative;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        background: url('https://starbucks-landing-page.netlify.app/public/images/menu.png');
-        background-size: 30px;
-        background-position: center;
-        background-repeat: no-repeat;
-        filter: invert(1);
-        z-index: 11;
-    }
-
-    .toggle.active {
-        position: fixed;
-        right: 20px;
-        background: url('https://starbucks-landing-page.netlify.app/public/images/close.png');
-        background-size: 25px;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    header ul.navigation.active {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background: #fff;
-        z-index: 10;
-    }
-
-    header ul li a {
-        font-size: 1.5em;
-        margin: 5px 0;
-    }
-
-    section {
-        padding: 20px 20px 120px;
-    }
-
-    .content {
-        flex-direction: column;
-        margin-top: 100px;
-    }
-
-    .content .textBox {
-        max-width: 100%;
-    }
-
-    .content .textBox h2 {
-        font-size: 2.5em;
-        margin-bottom: 15px;
-    }
-
-    .content .imgBox {
-        max-width: 100%;
-        justify-content: center;
-    }
-
-    .content .imgBox img {
-        max-width: 350px;
-    }
-
-    .thumbnails li img {
-        max-width: 40px;
-    }
-
-    .social {
-        background: #00624105;
-        right: 0;
-        width: 50px;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-    }
-
-    .circle {
-        clip-path: circle(400px at center bottom);
-    }
+.content2 a:hover {
+  background-color: #e65f52;
 }
 
-/* Estilos para telas maiores que 991px */
-@media (min-width: 992px) {
-    /* Ajustes gerais para telas grandes */
-
-    header {
-        padding: 20px;
-    }
-
-    header .logo {
-        max-width: 60px;
-    }
-
-    .toggle {
-        display: none; /* Ocultar o toggle em telas grandes */
-    }
-
-    header ul {
-        display: flex !important; /* Garantir que o menu seja visível */
-    }
-
-    header ul.navigation.active {
-        display: flex; /* Assegurar que o menu seja visível quando ativo */
-        position: static;
-        width: auto;
-        height: auto;
-        background: transparent;
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-
-    header ul li {
-        margin-left: 20px; /* Espaçamento entre os itens de menu */
-    }
-
-    header ul li a {
-        font-size: 1.2em; /* Tamanho da fonte dos links do menu */
-        margin: 0;
-    }
-
-    section {
-        padding: 20px 20px 120px; /* Espaçamento interno da seção principal */
-    }
-
-    .content {
-        flex-direction: row; /* Layout em linha para o conteúdo principal */
-        margin-top: 0; /* Remover margem superior */
-    }
-
-    .content .textBox {
-        max-width: 50%; /* Largura máxima da caixa de texto */
-    }
-
-    .content .textBox h2 {
-        font-size: 3em; /* Tamanho do título H2 */
-        margin-bottom: 20px; /* Espaçamento inferior do título */
-    }
-
-    .content .imgBox {
-        max-width: 50%; /* Largura máxima da caixa de imagem */
-        justify-content: flex-end; /* Alinhamento à direita */
-    }
-
-    .content .imgBox img {
-        max-width: 100%; /* Largura máxima da imagem */
-    }
-
-    .thumbnails li img {
-        max-width: 60px; /* Largura máxima das miniaturas */
-    }
-
-    .social {
-        display: block; /* Exibir o bloco de redes sociais */
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: #006241;
-        z-index: 11;
-    }
-
-    .circle {
-        clip-path: circle(600px at right 800px); /* Efeito de clip-path para o círculo */
-    }
+/* Carrossel dentro do conteúdo específico 2 */
+.carousel-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
+
+.carousel-item {
+  width: 100%;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.carousel-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Modal */
+/* Estilos para o modal de imagens */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #333;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #e2ba48; /* Cor de hover */
+}
+
+/* Seção de Horário de Funcionamento */
+.time {
+  background-color: #15312a;
+  padding: 80px 0;
+  text-align: center;
+  background-image: url('../img/pngegg (5).png'); /* Caminho da sua imagem de fundo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.time .container {
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  background-color: #242424;
+  color: #fff;
+}
+
+.time h2 {
+  font-size: 2rem;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.time .opening-hours {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.time .day {
+  flex: 1;
+  background-color: #fff;
+  padding: 30px 20px;
+  margin: 0 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.time .day:hover {
+  transform: translateY(-10px);
+}
+
+.time .day h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.time .day p {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+.time .info {
+  font-size: 1.2rem;
+  color: #f4f4f4;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsividade para dispositivos móveis */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* Reduzir o tamanho da fonte para melhor legibilidade */
+  }
+
+  h2 {
+    font-size: 2rem; /* Reduzir o tamanho do título padrão */
+  }
+
+  .content2 h2 {
+    font-size: 3rem; /* Ajustar tamanho do título em conteúdo específico
