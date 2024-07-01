@@ -1,331 +1,315 @@
-/* Importando a fonte Poppins do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+Claro, vou fazer uma revisão detalhada e incluir melhorias e ideias adicionais para aprimorar este projeto. 
 
-/* Reset padrão e estilos globais */
+### Melhorias e Sugestões
+1. **Consolidação de CSS e Melhorias Visuais**:
+   - Consolidar todos os arquivos CSS em um único arquivo para reduzir requisições HTTP.
+   - Adicionar variáveis CSS para cores e fontes para facilitar a manutenção.
+   - Melhorar a responsividade com media queries.
+   - Adicionar transições suaves para interações do usuário.
+
+2. **Acessibilidade e SEO**:
+   - Adicionar descrições `alt` para todas as imagens.
+   - Garantir que o contraste de cores esteja de acordo com as normas de acessibilidade (WCAG).
+   - Adicionar meta tags para SEO e Open Graph.
+
+3. **Interatividade e UX**:
+   - Melhorar a experiência do formulário com validações em tempo real.
+   - Adicionar animações leves para 
+/* Variáveis */
+:root {
+    --primary-color: #036635;
+    --secondary-color: #e2ba48;
+    --accent-color: #ce4326;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --font-family: 'Arial', sans-serif;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: 'Poppins', Arial, sans-serif; /* Usando Poppins como fonte principal */
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
-/* Título H2 */
-h2 {
-  font-size: 2.5rem;
-  color: #fff;
-  text-transform: uppercase;
-  position: relative;
-  margin-bottom: 20px;
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
 }
 
-/* Span dentro do título H2 */
-h2 span {
-  color: #e2ba48; /* Cor do span */
+.logo {
+    width: 120px;
 }
 
-/* Parágrafos */
-p {
-  font-size: 1rem; /* Tamanho de fonte ajustado */
-  color: #fff;
-  margin-bottom: 20px; /* Margem inferior reduzida para um espaçamento mais equilibrado */
-  line-height: 1.6; /* Aumenta o espaçamento entre linhas para melhor legibilidade */
+.navigation {
+    display: flex;
+    gap: 1rem;
 }
 
-/* Estilo para botão 'Saiba Mais' */
-.learnmore, .learnmore:hover {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #e2ba48;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
+.navigation li {
+    list-style: none;
 }
 
-.learnmore:hover {
-  background-color: #c06804; /* Cor alternativa ao hover */
+.navigation a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background 0.3s;
 }
 
-/* Ícone na seção de conteúdo */
-.section2heading::before {
-  font-family: 'Font Awesome 5 Free';
-  content: "\f128"; /* Ícone de dúvida */
-  margin-right: 10px;
-  color: #e2ba48;
+.navigation a:hover {
+    background-color: var(--secondary-color);
 }
 
-/* Caixa de texto no conteúdo secundário */
+/* Toggle Menu for Mobile */
+.toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .toggle {
+        display: block;
+    }
+
+    .navigation {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: var(--primary-color);
+    }
+
+    .navigation li {
+        text-align: center;
+    }
+
+    .navigation a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid white;
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+}
+
+/* Home Section */
+#home {
+    position: relative;
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+}
+
+.circle {
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 300px;
+    height: 300px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+}
+
+.textBox h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.textBox p {
+    margin: 1rem 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: var(--secondary-color);
+}
+
+.imgBox img {
+    max-width: 100%;
+}
+
+/* Thumbnails */
+.thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.thumbnails li {
+    list-style: none;
+}
+
+.thumbnails img {
+    width: 50px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.thumbnails img:hover {
+    transform: scale(1.1);
+}
+
+/* Social Icons */
+.social-container {
+    margin: 2rem 0;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social a {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social a:hover {
+    color: var(--secondary-color);
+}
+
+/* Content Sections */
+section.content-2, section.content-3, section.content-4 {
+    padding: 2rem 0;
+}
+
 .textBox2 {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-  margin-bottom: 20px;
-  top: 30px;
+    margin-bottom: 2rem;
 }
 
-/* Carrossel */
+.textBox2 h2 {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+}
+
+.textBox2 p {
+    margin: 1rem 0;
+}
+
 .carousel {
-  margin-top: 30px;
-  overflow: hidden;
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
 }
 
 .carousel-list {
-  display: flex;
-  transition: transform 0.5s ease;
-  margin-left: -20px; /* Ajuste para compensar a margem negativa do primeiro item */
+    display: flex;
+    gap: 1rem;
 }
 
-.carousel-item {
-  flex: 0 0 calc(25% - 20px); /* Calcula o tamanho do item descontando a margem direita */
-  margin-right: 20px;
-  cursor: pointer;
+.carousel-item-4 img {
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.3s;
 }
 
-.carousel-item img {
-  width: 100%;
-  display: block;
-  border-radius: 5px;
-  transition: transform 0.3s ease; /* Adiciona uma transição suave para a imagem */
+.carousel-item-4 img:hover {
+    transform: scale(1.1);
 }
 
-.carousel-item:hover img {
-  transform: scale(1.1); /* Efeito de escala ao passar o mouse sobre a imagem */
-}
-
-/* Seleção de texto personalizada */
-::selection {
-  background-color: #ff6f61;
-  color: #fff;
-}
-
-/* Estilo padrão para links */
-a {
-  text-decoration: none;
-  color: #ff6f61;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: #e65f52;
-}
-
-/* Conteúdo 2, 3, 4 (seções principais) */
-.content-2,
-.content-3,
-.content-4 {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  padding: 50px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #15312a;
-  color: #fff;
-  text-align: center;
-  background-image: url('../img/pngegg (5).png'); /* Caminho da sua imagem de fundo */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Conteúdo específico 2 */
-.content2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #242424;
-  color: #fff;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  width: 90%;
-  max-width: 1200px;
-  margin: 50px auto;
-}
-
-.content2 .textBox2 {
-  max-width: 600px;
-  text-align: center;
-  margin-bottom: 20px;
-  top: 30px;
-}
-
-.content2 h2 {
-  font-size: 4em;
-  font-weight: 700;
-  line-height: 1.3;
-  margin-bottom: 10px;
-}
-
-.content2 #span2 {
-  color: #ff6f61;
-  font-size: 1.5em;
-  font-weight: 600;
-}
-
-.content .textBox p {
-  color: #fff; /* Cor do texto branco */
-  margin-top: 20px; /* Margem superior de 20px */
-  line-height: 1.8; /* Espaçamento entre linhas de 1.8 */
-}
-
-.content2 a {
-  padding: 12px 24px;
-  background-color: #ff6f61;
-  color: #fff;
-  border-radius: 40px;
-  font-weight: 700;
-  transition: background-color 0.3s ease;
-}
-
-.content2 a:hover {
-  background-color: #e65f52;
-}
-
-/* Carrossel dentro do conteúdo específico 2 */
-.carousel-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-}
-
-.carousel-item {
-  width: 100%;
-  text-align: center;
-  margin: 0 10px;
-}
-
-.carousel-item img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Modal */
-/* Estilos para o modal de imagens */
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  padding: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  max-width: 80%;
-  text-align: center;
-  position: relative;
-}
-
-.modal-content img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #333;
-  font-size: 24px;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-.close:hover {
-  color: #e2ba48; /* Cor de hover */
-}
-
-/* Seção de Horário de Funcionamento */
+/* Time Section */
 .time {
-  background-color: #15312a;
-  padding: 80px 0;
-  text-align: center;
-  background-image: url('../img/pngegg (5).png'); /* Caminho da sua imagem de fundo */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.time .container {
-  max-width: 90%;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  background-color: #242424;
-  color: #fff;
+    padding: 2rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
 }
 
 .time h2 {
-  font-size: 2rem;
-  color: #fff;
-  text-transform: uppercase;
-  position: relative;
-  margin-bottom: 30px;
+    margin-bottom: 1rem;
 }
 
-.time .opening-hours {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
+.opening-hours {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
 }
 
-.time .day {
-  flex: 1;
-  background-color: #fff;
-  padding: 30px 20px;
-  margin: 0 10px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease;
+.day {
+    text-align: center;
 }
 
-.time .day:hover {
-  transform: translateY(-10px);
+.info {
+    margin-top: 1rem;
+    font-size: 0.9rem;
 }
 
-.time .day h3 {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 10px;
+/* Form Section */
+.section2 {
+    padding: 2rem;
+    background-color: var(--background-color);
 }
 
-.time .day p {
-  font-size: 1.4rem;
-  color: #666;
+.section2heading {
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.time .info {
-  font-size: 1.2rem;
-  color: #f4f4f4;
-  line-height: 1.6;
-  max-width: 600px;
-  margin: 0 auto;
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsividade para dispositivos móveis */
-@media only screen and (max-width: 768px) {
-  body {
-    font-size: 14px; /* Reduzir o tamanho da fonte para melhor legibilidade */
-  }
+input[type=text], input[type=email], textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0 1rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
 
-  h2 {
-    font-size: 2rem; /* Reduzir o tamanho do título padrão */
-  }
+input[type=submit] {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
 
-  .content2 h2 {
-    font-size: 3rem; /* Ajustar tamanho do título em conteúdo específico
+input[type=submit]:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Footer */
+.footer {
+    padding: 1rem;
+    background-color: var(--primary-color);
+    text-align: center;
+    color: white;
+}
+
+.footer p {
+    margin: 0;
+}
