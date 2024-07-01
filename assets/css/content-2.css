@@ -27,3 +27,15 @@
     max-height: 70vh; /* Reduzir altura máxima da imagem no modal */
   }
 }
+/* Responsividade para dispositivos móveis */
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px; /* Reduzir o tamanho da fonte para melhor legibilidade */
+  }
+
+  h2 {
+    font-size: 2rem; /* Reduzir o tamanho do título padrão */
+  }
+
+  .content2 h2 {
+    font-size: 3rem; /* Ajustar tamanho do título em conteúdo específico
