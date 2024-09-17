@@ -1,0 +1,707 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
+
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    color: #000000;
+    background-color: #f2f0eb;
+}
+body {
+    padding-top: 60px; 
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px; /
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 100px; 
+    }
+}
+
+body {
+    padding-top: 160px; 
+}
+
+::-webkit-scrollbar {
+    width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0; 
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e3932; 
+    border-radius: 10px; 
+    border: 3px solid #f0f0f0; 
+}
+
+/* Barra de rolagem para Firefox */
+scrollbar {
+    width: 12px; 
+}
+
+scrollbar-track {
+    background: #f0f0f0; 
+}
+
+scrollbar-thumb {
+    background: #1e3932; 
+    border-radius: 10px; 
+}
+
+
+#home {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.home-container {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100px; 
+    background-color: #1e3932;
+    border-bottom: 1px solid #ddd; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+.flash-sales__item {
+    display: none;
+    text-align: center;
+}
+
+.flash-sales__item.active {
+    display: block;
+    padding: 20px 50px;
+}
+
+.flash-sales__message {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    font-size: 24px;
+}
+
+
+header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 100px; 
+    left: 0;
+    width: 100%;
+    z-index: 500; 
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+/* Conteúdo do header */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #000;
+}
+
+
+.icons {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px; 
+    right: -10px; 
+    background: red;
+    color: white;
+    border-radius: 50%;
+    width: 20px; 
+    height: 20px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px; 
+    font-weight: bold;
+}
+.produto { margin-bottom: 20px; }
+.produto-imagem { width: 100px; height: auto; }
+.btn-quantidade { margin: 0 5px; }
+.btn-adicionar { margin-top: 10px; }
+#cart-count { font-size: 16px; color: rgb(9, 9, 9); }
+.status-esgotado { color: red; }
+.status-disponivel { color: green; }
+
+
+.toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.navigation ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation li {
+    margin: 0 15px;
+    position: relative;
+     color: #151515;
+}
+
+.btn-compre {
+    color: #151515;
+    border: 1px solid #1e3932;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-compre:hover, .btn-compre:focus {
+    color: #000000;
+    border-color: #14503d;
+    text-decoration: none;
+    outline: none;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #333;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.navigation a::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #1e3932;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.navigation a:hover::after,
+.navigation a:focus::after {
+    transform: scaleX(1);
+}
+
+.logo-container {
+    flex: 1;
+    text-align: center;
+}
+
+.logo {
+    max-height: 50px; 
+}
+
+.compre-container {
+    display: flex;
+    align-items: center;
+}
+
+.compre-container .icons {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.compre-container .icons a {
+    margin-left: 10px;
+}
+
+.compre-container .icons img {
+    width: 40px; 
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .toggle {
+        display: block;
+    }
+
+    .navigation ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; 
+        right: 0;
+        background: #fff;
+        width: 100%;
+        border-top: 1px solid #ddd;
+    }
+
+    .navigation ul.active {
+        display: flex;
+    }
+
+    .navigation li {
+        margin: 10px 0;
+    }
+
+    .icons {
+        display: none;
+    }
+}
+
+/* Estilos para o carrossel */
+.carousel {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 150px); 
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 24px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateY(-50%);
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+
+@media (max-width: 768px) {
+    .carousel-control {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .carousel-item img {
+        height: auto; 
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-control {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+}
+
+
+.cafe-content {
+   justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+    background-color: #1e3932;
+    background-position: left top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    padding-top: 76px;
+    padding-bottom: 76px;
+     font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.cafe-starbucks h1 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: 80px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.cafe-starbucks .highlighted-text {
+    color: #fff;
+    font-weight: 700;
+}
+.cafe-starbucks sup {
+    font-size: 1em;
+}
+
+.cafe-starbucks p {
+    font-family:"EB Garamond", serif;
+    font-size: 38px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .cafe-starbucks {
+        padding: 60px 15px;
+        height: calc(100vh - 80px);
+    }
+
+    .cafe-starbucks h1 {
+        font-size: 28px;
+    }
+
+    .cafe-starbucks p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cafe-starbucks {
+        padding: 40px 10px;
+        height: calc(100vh - 60px);
+    }
+
+    .cafe-starbucks h1 {
+        font-size: 24px;
+    }
+
+    .cafe-starbucks p {
+        font-size: 14px;
+    }
+}
+
+#produtos-mais-vendidos {
+    padding: 40px 20px;
+}
+
+.produtos-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.produtos-container h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #1e3932;
+    margin-bottom: 20px;
+}
+
+.produtos-container p {
+    font-family: "EB Garamond", serif;
+    font-weight: 500;
+    font-size: 52px;
+    color: #1e3932;
+    margin-bottom: 30px;
+}
+
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.produto {
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    text-align: left;
+    position: relative; /* Para posicionar a imagem corretamente */
+}
+
+.produto-imagem {
+    background-color: #f2f0eb;
+    width: 70%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.produto h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #1e3932;
+    margin-bottom: 10px;
+}
+
+.produto p {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.classificacao {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.status {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #e7ff36;
+    margin-bottom: 10px;
+}
+
+.preco-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre o preço antigo e o preço atual */
+    margin-bottom: 10px;
+}
+
+.preco-antigo {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #5c0000;
+    text-decoration: line-through;
+    margin: 0; /* Remove margem adicional */
+}
+
+.preco-atual {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #1e3932;
+    margin: 0; /* Remove margem adicional */
+}
+
+.quantidade-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre a quantidade e o botão adicionar */
+    margin-bottom: 10px;
+}
+.quantidade {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre os botões de quantidade */
+}
+
+.btn-quantidade {
+    color: #222222;
+    border: 1px solid #333;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btn-adicionar {
+    background-color: #005740;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-adicionar:hover {
+    background-color: #14503d;
+}
+
+.classificacao {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre as estrelas e o texto */
+}
+
+.estrelas {
+    color: #f1c40f; /* Cor das estrelas, ajustável */
+}
+
+.estrelas i {
+    margin-right: 2px; /* Espaço entre as estrelas */
+}
+
+
+
+#preparacao {
+    background-color: #1e3932; /* Cor de fundo clara para contraste */
+    padding: 40px 20px;
+}
+
+.preparacao-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px; /* Espaço entre texto e imagem */
+}
+
+.preparacao-texto {
+    flex: 1;
+    max-width: 50%;
+}
+
+.preparacao-texto h2 {
+    font-family: "EB Garamond", serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #b3b3b3;
+}
+
+.preparacao-texto p {
+    font-family: "EB Garamond", serif;
+    font-weight: 600;
+    font-size: 38px;
+    color: #dddddd;
+}
+
+.preparacao-texto .tempo {
+    font-weight: 700;
+    color: #1e3932;
+}
+
+.btn-leia-mais {
+    display: inline-block;
+    background-color: #005740;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-leia-mais:hover {
+    background-color: #14503d;
+}
+
+.preparacao-imagem {
+    flex: 1;
+    max-width: 50%;
+}
+
+.preparacao-imagem img {
+    width: 100%;
+    height: auto;
+}
+
+
+.tempo-container {
+    display: flex;
+    align-items: center;
+    gap: 1px; /* Espaçamento entre o texto e o ícone */
+    margin-top: 20px; /
+}
+
+.btn-leia-mais {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    padding: 18px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-right: 15px;
+    margin-top: 2rem;
+}
+
+.btn-leia-mais:hover {
+    background-color: #00754a;
+}
+
+ svg {
+    width: 24px; 
+    height: 24px; 
+    fill: #fff; /* Cor do ícone SVG */
+    vertical-align: middle; /* Alinha verticalmente com o texto */
+}
+
+.preparacao-texto span {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    margin-right: 15px;
+}

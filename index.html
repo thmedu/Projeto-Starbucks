@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Starbucks - Café e experiências únicas. Junte-se ao Starbucks Rewards™ para benefícios exclusivos.">
+    <meta name="description"
+        content="Starbucks - Café e experiências únicas. Junte-se ao Starbucks Rewards™ para benefícios exclusivos.">
     <meta name="keywords" content="Starbucks, café, bebidas, Rewards, menu, café da manhã">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
@@ -13,203 +14,198 @@
     <meta property="og:url" content="https://yourwebsite.com">
     <meta name="twitter:card" content="summary_large_image">
     <title>Starbucks</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-v5i/9cUn9mvhAchU8TrdTVgrhFxc3WokVZzVZlQSTKbsfyIbNRt1L1l2P20dQf+UMMKrDcq64ZcUkTp+ZJl4Sw==" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./src/css/styles.css">
     <link rel="icon" type="image/x-icon" href="./assets/img/logo.png">
+
 </head>
 
 <body>
-    <section id="home">
-        <div class="circle"></div>
-        <header>
-            <a href="#home"><img src="./assets/img/logo.png" class="logo" alt="Starbucks Logo"></a>
-            <div class="toggle" onclick="toggleMenu()"></div>
-            <ul class="navigation">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#novidades">Novidades</a></li>
-                <li><a href="#horarios">Horários</a></li>
-                <li><a href="#duvidas">Dúvidas</a></li>
-                <li><a href="#loja">Loja Próxima</a></li>
-                <li><a href="#pedido">Fazer Pedido</a></li>
-            </ul>
-        </header>
 
-        <div class="content">
-            <button onclick="topFunction()" id="myBtn" title="Clique para ir ao topo" class="button">Topo</button>
-            <div class="textBox">
-                <h2>NÃO É APENAS CAFÉ<br />É <span id="output">STARBUCKS</span></h2>
-                <p>Faça cada gole mais recompensador. Junte-se ao Starbucks Rewards™ para ganhar benefícios de nível Gold como bebidas e alimentos gratuitos, obtenha recargas gratuitas, pague e peça com seu telefone, e mais.</p>
-                <a href="#" id="learnmore">Saiba Mais</a>
+    <div class="home-container">
+        <a href="https://www.starbucksathome.com/br/cafes/c" target="_blank" rel="noopener"
+            class="flash-sales__item active">
+            <p class="flash-sales__message">*VÁLIDO PARA PEDIDOS ACIMA DE R$ 50</p>
+        </a>
+        <a href="https://www.starbucksathome.com/br/cafes/c" target="_blank" rel="noopener" class="flash-sales__item">
+            <p class="flash-sales__message">APROVEITE: FRETE GRÁTIS EM PEDIDOS ACIMA DE R$ 100</p>
+        </a>
+        <a href="https://www.starbucksathome.com/br/cafes/c" target="_blank" rel="noopener" class="flash-sales__item">
+            <p class="flash-sales__message">*VÁLIDO PARA PEDIDOS ACIMA DE R$ 50</p>
+        </a>
+    </div>
+
+
+
+
+    <header>
+        <div class="header-content">
+            <div class="toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
             </div>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#coffe">Explore nossos Cafés</a></li>
+                    <li><a href="#receitas">Receitas</a></li>
+                    <li><a href="#saiba-mais">Saiba mais</a></li>
+                    <li class="logo-container">
+                        <a href="#home"><img src="./assets/img/logo.png" class="logo" alt="Starbucks Logo"></a>
+                    </li>
+                    <li class="compre-container">
+                        <a class="btn-compre" href="#compre">Compre aqui</a>
+                        <div class="icons">
+                            <a href="#search"><img src="./assets/icons/search_icon.svg" alt="search_icon"></a>
+                            <a href="#cart">
+                                <img src="./assets/icons/checkout.svg" alt="cart_checkout" id="cart-icon">
+                                <span id="cart-count" class="cart-count">0</span> <!-- Contador do carrinho -->
+                            </a>
+                        </div>
 
-            <div class="imgBox">
-                <img src="./assets/img/2cafe.png" alt="Starbucks Café" class="starbucks">
+                    </li>
+                    <li><a href="#loguin">Entrar</a></li>
+                    <li><a href="#loguin">Registrar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item">
+                <img src="./assets/header-carrosel/1.webp" alt="Imagem 1">
+            </div>
+            <div class="carousel-item">
+                <img src="./assets/header-carrosel/2.jpg" alt="Imagem 2">
             </div>
         </div>
+        <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+    </div>
 
-        <ul class="thumbnails">
-            <li>
-                <img id="changeCreme" src="./assets/img/cafe-canudo-reto/cafe-laranja.png" onclick="imageSlider('./assets/img/cafe-canudo-reto/cafe-laranja.png'); changeCircleColor('#e2ba48');" alt="Café Laranja">
-            </li>
-            <li>
-                <img id="changeGrozelia" src="./assets/img/cafe-canudo-reto/café groselha.png" onclick="imageSlider('./assets/img/cafe-canudo-reto/café groselha.png'); changeCircleColor('#ce4326');" alt="Café Groselha">
-            </li>
-            <li>
-                <img id="changeAcai" src="./assets/img/cafe-canudo-reto/cafe-verde3.png" onclick="imageSlider('./assets/img/cafe-canudo-reto/cafe-verde3.png'); changeCircleColor('#30252b');" alt="Café Verde">
-            </li>
-            <li>
-                <img id="changeRosa" src="./assets/img/cafe-canudo-reto/cafe-rosa.png" onclick="imageSlider('./assets/img/cafe-canudo-reto/cafe-rosa.png'); changeCircleColor('#f9d6d9');" alt="Café Rosa">
-            </li>
-        </ul>
 
-        <div class="social-container">
-            <ul class="social" id="social">
-                <li><a href="https://www.facebook.com/Starbucks/" target="_blank"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="https://twitter.com/Starbucks" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="https://www.instagram.com/starbucks_sa" target="_blank"><i class="fab fa-instagram"></i></a></li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="content-2" id="menu">
-        <div class="content2">
-            <div class="textBox2">
-                <h2>UMA CHÁVENA <br />DE <span class="span">CAFÉ PERFEITA</span></h2>
-                <p>Desde o nosso início em 1971, buscamos a perfeição em cada xícara. Nossas torrefações meticulosas garantem que cada lote de café ofereça o máximo de sabor. Nossos baristas dedicados preparam cada bebida artesanalmente, atendendo aos gostos individuais de nossos clientes.</p>
-            </div>
-            <div class="carousel">
-                <div class="carousel-list">
-                    <div class="carousel-item-4" data-color="#c9bdb9">
-                        <img src="./assets/img/sem canudo/cafe-chocolate.png" alt="Café Chocolate" onclick="openImageModal(this)">
-                    </div>
-                    <div class="carousel-item-4" data-color="#f2210b">
-                        <img src="./assets/img/sem canudo/cafe-tutti.png" alt="Café Tutti" onclick="openImageModal(this)">
-                    </div>
-                    <div class="carousel-item-4" data-color="#e2ba48">
-                        <img src="./assets/img/sem canudo/café-amarelo.png" alt="Café Amarelo" onclick="openImageModal(this)">
-                    </div>
-                    <div class="carousel-item-4" data-color="#36a2eb">
-                        <img src="./assets/img/sem canudo/cafe-azul.png" alt="Café Azul" onclick="openImageModal(this)">
-                    </div>
-                </div>
-                <div class="textBox2">
-                    <a href="#" class="learnmore">Descubra Mais</a>
-                </div>
-            </div>
+    <section>
+        <div class="cafe-content">
+            <p style="text-align: center;"><span style="color: #ffffff;"><strong>CAFÉ STARBUCKS<sup><sup>®</sup></sup>.
+                        Prepare-o em casa, da forma que mais gosta.</strong></span>
+            <p style="text-align: center;"><span style="color: #ffffff;">Descubra os nossos cafés Starbucks®. Desfrute
+                    de uma xícara de café 100% arábica ou de uma icónica bebida de
+                    café, quando e como quiser.</p>
         </div>
     </section>
 
-    <section class="content-3" id="novidades">
-        <div class="content2">
-            <div class="textBox2">
-                <h2>Bebidas <span class="span"> Refreshers® </span></h2>
-                <p>Descubra os Refreshers® da Starbucks®, bebidas que combinam frescor e sabor de forma única. Desde 1971, nossos grãos são cuidadosamente selecionados e torrados para oferecer a máxima qualidade. Nossos baristas são especialistas em preparar cada bebida de forma artesanal, garantindo uma experiência refrescante a cada gole.</p>
-            </div>
-            <div class="carousel">
-                <div class="carousel-list">
-                    <div class="carousel-item cafe-chocolate" data-background="#51341F" data-color="#c9bdb9">
-                        <img src="./assets/img/Refreshers/download-removebg-preview.png" alt="Café Chocolate" onclick="openImageModal(this)">
+
+ <section id="produtos-mais-vendidos">
+        <div class="produtos-container">
+            <h2>QUERIDINHOS</h2>
+            <p>Que tal uma xícara de café?</p>
+            <div class="produtos">
+                <div class="produto" data-id="1">
+                    <img src="./assets/queiridinhos/1-f.png" alt="Starbucks Caramel Macchiato" class="produto-imagem">
+                    <h3>Starbucks® Caramel Macchiato</h3>
+                    <p>Starbucks® Caramel Macchiato NESCAFÉ® Dolce Gusto® - 10 Cápsulas by NESCAFÉ® Dolce Gusto®</p>
+                    <div class="classificacao">
+                        <div class="estrelas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>(1)</span>
                     </div>
-                    <div class="carousel-item cafe-tutti" data-background="#f2210b" data-color="#f2210b">
-                        <img src="./assets/img/Refreshers/download__1_-removebg-preview.png" alt="Café Tutti" onclick="openImageModal(this)">
+                    <p class="status status-esgotado">Esgotado</p>
+                </div>
+                <div class="produto" data-id="2">
+                    <img src="./assets/queiridinhos/2.png" alt="Starbucks Single Origin Colombia" class="produto-imagem">
+                    <h3>Starbucks® Single - Origin Colombia</h3>
+                    <p>Starbucks® Single-Origin Colombia by Nespresso® - 10 cápsulas by Nespresso® | Torra Média</p>
+                    <div class="classificacao">
+                        <div class="estrelas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>(5)</span>
                     </div>
-                    <div class="carousel-item cafe-amarelo" data-background="#E2BA48" data-color="#c06804">
-                        <img src="./assets/img/Refreshers/download__2_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
+                    <div class="preco-container">
+                        <p class="preco-antigo">R$ 28,99</p>
+                        <p class="preco-atual">R$ 21,74</p>
                     </div>
-                    <div class="carousel-item cafe-amarelo" data-background="#E2BA48" data-color="#c06804">
-                        <img src="./assets/img/Refreshers/download__3_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
-                    </div>
-                    <div class="carousel-item cafe-amarelo" data-background="#E2BA48" data-color="#c06804">
-                        <img src="./assets/img/Refreshers/download__4_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
-                    </div>
-                    <div class="carousel-item cafe-amarelo
-<div class="carousel-item cafe-amarelo" data-background="#E2BA48" data-color="#c06804">
-                        <img src="./assets/img/Refreshers/download__4_-removebg-preview.png" alt="Café Amarelo" onclick="openImageModal(this)">
+                    <div class="quantidade-container">
+                        <div class="quantidade">
+                            <button class="btn-quantidade">-</button>
+                            <span>1</span>
+                            <button class="btn-quantidade">+</button>
+                        </div>
+                        <button class="btn-adicionar">Adicionar ao Carrinho</button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-4" id="horarios">
-        <div class="time">
-            <h2>Horário de Funcionamento</h2>
-            <div class="opening-hours">
-                <div class="day">
-                    <h3>Segunda - Sexta</h3>
-                    <p>7:00 - 22:00</p>
+                <div class="produto" data-id="3">
+                    <img src="./assets/queiridinhos/3.png" alt="Starbucks Pike Place Roast" class="produto-imagem">
+                    <h3>Starbucks® Pike Place Roast</h3>
+                    <p>Starbucks® Pike Place® Roast Torrado e Moído - 250g Torrado Moído | Torra Média</p>
+                    <div class="classificacao">
+                        <div class="estrelas">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span>(9)</span>
+                    </div>
+                    <div class="preco-container">
+                        <p class="preco-antigo">R$ 29,99</p>
+                        <p class="preco-atual">R$ 27,99</p>
+                    </div>
+                    <div class="quantidade-container">
+                        <div class="quantidade">
+                            <button class="btn-quantidade">-</button>
+                            <span>1</span>
+                            <button class="btn-quantidade">+</button>
+                        </div>
+                        <button class="btn-adicionar">Adicionar ao Carrinho</button>
+                    </div>
                 </div>
-                <div class="day">
-                    <h3>Sábado</h3>
-                    <p>8:00 - 22:00</p>
-                </div>
-                <div class="day">
-                    <h3>Domingo</h3>
-                    <p>9:00 - 20:00</p>
-                </div>
-            </div>
-            <div class="info">
-                <p>Endereço: Av. Paulista, 1234 - São Paulo, SP</p>
-                <p>Telefone: (11) 1234-5678</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="content-5" id="duvidas">
-        <div class="section2">
-            <div class="section2heading">
-                <h2>Entre em Contato</h2>
-                <p>Se você tiver alguma dúvida ou sugestão, entre em contato conosco preenchendo o formulário abaixo.</p>
-            </div>
-            <div class="container">
-                <form id="contactForm">
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Mensagem:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-
-                    <input type="submit" value="Enviar">
-                </form>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
-        <p>&copy; 2024 Starbucks. Todos os direitos reservados.</p>
-    </footer>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.querySelector('.navigation');
-            menu.classList.toggle('active');
-        }
+    <section id="preparacao">
+        <div class="preparacao-container">
+            <div class="preparacao-texto">
+                <h2>PREPARAÇÃO</h2>
+                <p>Níveis de torra</p>
+                <p>Qual a torra que prefere? Starbucks® Torra Clara, Torra Média ou Torra Escura? Estas sãos as torras
+                    que fazem parte dos níveis de torra Starbucks®.</p>
 
-        function imageSlider(image) {
-            document.querySelector('.starbucks').src = image;
-        }
+                <a href="https://www.starbucksathome.com/br/blog/niveis-de-torra.html" class="btn-leia-mais">Ler o
+                    artigo</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="#fff">
+                    <path
+                        d="M20.082 3.018l.026.75zm-3.582.47l-.215-.719zm-2.826 1.315l-.376-.65zM3.982 3.075l-.046.749zM7 3.488l.191-.726zm3.282 1.388l-.35.663zm3.346 15.193l.352.662zM17 18.634l-.191-.726zm2.985-.411l.047.749zm-9.613 1.846l-.352.662zM7 18.634l.191-.726zm-2.985-.411l-.047.749zm-1.265-2.08V4.999h-1.5v11.146zm20 0V4.934h-1.5v11.21zM20.056 2.269c-1.139.04-2.626.158-3.771.501l.43 1.437c.95-.284 2.274-.4 3.393-.439zm-3.771.501c-.995.298-2.114.88-2.987 1.385l.752 1.298c.85-.492 1.845-1 2.665-1.246zM3.936 3.824c.966.059 2.06.174 2.873.389l.382-1.45c-.96-.254-2.176-.376-3.163-.437zm2.873.389c.962.254 2.146.81 3.123 1.326l.7-1.326c-.995-.527-2.304-1.15-3.44-1.45zM13.98 20.73c.991-.528 2.219-1.11 3.211-1.372l-.382-1.45c-1.17.308-2.526.961-3.534 1.499zm3.211-1.372c.803-.212 1.882-.328 2.841-.388l-.094-1.497c-.98.062-2.179.183-3.13.434zm-6.466.048c-1.008-.537-2.363-1.19-3.534-1.499l-.382 1.45c.992.263 2.22.845 3.21 1.373zm-3.534-1.499c-.95-.25-2.15-.372-3.13-.434l-.093 1.497c.959.06 2.038.176 2.84.388zm14.059-1.764c0 .686-.568 1.284-1.312 1.33l.094 1.497c1.474-.092 2.718-1.291 2.718-2.827zm1.5-11.21c0-1.464-1.165-2.719-2.694-2.666l.052 1.5c.615-.022 1.142.484 1.142 1.165zm-21.5 11.21c0 1.536 1.244 2.735 2.718 2.828l.094-1.498c-.744-.046-1.312-.645-1.312-1.33zm12.025 3.264a2.72 2.72 0 0 1-2.55 0l-.705 1.323a4.22 4.22 0 0 0 3.96 0zm.023-15.254a2.77 2.77 0 0 1-2.665.059l-.701 1.326a4.27 4.27 0 0 0 4.118-.087zM2.75 4.998c0-.697.552-1.213 1.186-1.174l.092-1.498C2.47 2.231 1.25 3.5 1.25 4.998z" />
+                    <path stroke="#fff" stroke-width="1.15" d="M12 5.5v15" />
+                </svg>
 
-        function changeCircleColor(color) {
-            document.querySelector('.circle').style.backgroundColor = color;
-        }
+                <span class="preparacao-texto">- 3 min</span>
+            </div>
+            <div class="preparacao-imagem">
+                <img src="./assets/img/cofe-preparacao.png" alt="Níveis de Torra Starbucks">
+            </div>
+        </div>
+    </section>
 
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
 
-        function openImageModal(img) {
-            // Função para abrir um modal com a imagem em tamanho maior (pode ser implementada posteriormente)
-        }
 
-        document.getElementById("contactForm").addEventListener("submit", function(event){
-            event.preventDefault();
-            alert("Formulário enviado com sucesso!");
-        });
-    </script>
+    <script src="./src/js/script.js"></script>
+    <script src="./src/js/car.js"></script>
+
+
 </body>
+
 </html>
