@@ -1,5 +1,6 @@
 
 # Starbucks
+![starbucks](https://github.com/user-attachments/assets/88a2fd93-4545-4e46-b8ef-36426771a2bd)
 
 Bem-vindo ao projeto da página de destino do Starbucks! Este projeto foi criado utilizando  CSS e JavaScript para simular uma página inicial imaginária do Starbucks. A página é responsiva, adaptando-se automaticamente a diferentes tamanhos de tela, desde smartphones até desktops.
 
