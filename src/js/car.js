@@ -1,59 +1,48 @@
- document.addEventListener('DOMContentLoaded', () => {
-            const carrinho = {};
-            const cartCount = document.getElementById('cart-count');
+let currentIndex = 0;
+const items = document.querySelectorAll('.slider-item');
+const totalItems = items.length;
 
-            function atualizarContadorCarrinho() {
-                const totalItens = Object.values(carrinho).reduce((acc, quantidade) => acc + quantidade, 0);
-                cartCount.textContent = totalItens;
-            }
+function setActive(index) {
+    items.forEach((item, i) => {
+        item.classList.remove('active');
+        if (i === index) {
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+        } else {
+            item.style.opacity = '0.1';
+            item.style.transform = 'scale(0.8)';
+        }
+    });
 
-            const produtos = document.querySelectorAll('.produto');
+    const sliderInner = document.querySelector('.slider-inner');
+    const offset = index * (items[index].clientWidth + 20) - (sliderInner.clientWidth / 2 - items[index].clientWidth / 2);
+    sliderInner.style.transform = `translateX(-${offset}px)`;
+}
 
-            produtos.forEach(produto => {
-                const btnMenos = produto.querySelector('.btn-quantidade:first-child');
-                const btnMais = produto.querySelector('.btn-quantidade:last-child');
-                const quantidade = produto.querySelector('.quantidade span');
-                const btnAdicionar = produto.querySelector('.btn-adicionar');
+function moveSlider(direction) {
+    currentIndex = (currentIndex + direction + totalItems) % totalItems;
+    setActive(currentIndex);
+}
 
-                const produtoId = produto.getAttribute('data-id');
-                let quantidadeAtual = parseInt(quantidade.textContent);
+items.forEach((item, index) => {
+    item.onclick = () => {
+        if (index !== currentIndex) {
+            currentIndex = index;
+            setActive(currentIndex);
+        } else {
+            moveSlider(1);
+        }
+    };
+});
 
-                function atualizarQuantidade(produtoId, quantidade) {
-                    if (quantidade > 0) {
-                        carrinho[produtoId] = quantidade;
-                    } else {
-                        delete carrinho[produtoId];
-                    }
-                    atualizarContadorCarrinho();
-                }
+// Inicializa o primeiro item como ativo
+setActive(currentIndex);
 
-                function atualizarQuantidadeVisivel() {
-                    quantidade.textContent = quantidadeAtual;
-                    atualizarQuantidade(produtoId, quantidadeAtual);
-                }
-
-                btnMenos.addEventListener('click', () => {
-                    if (quantidadeAtual > 1) {
-                        quantidadeAtual--;
-                        atualizarQuantidadeVisivel();
-                    }
-                });
-
-                btnMais.addEventListener('click', () => {
-                    quantidadeAtual++;
-                    atualizarQuantidadeVisivel();
-                });
-
-                btnAdicionar.addEventListener('click', () => {
-                    if (quantidadeAtual > 0) {
-                        alert(`Produto ${produtoId} adicionado ao carrinho com quantidade ${quantidadeAtual}!`);
-                    } else {
-                        alert('Selecione uma quantidade antes de adicionar ao carrinho.');
-                    }
-                });
-
-                atualizarQuantidade(produtoId, quantidadeAtual);
-            });
-
-            atualizarContadorCarrinho();
-        });
+// Navegação por teclado
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight') {
+        moveSlider(1);
+    } else if (event.key === 'ArrowLeft') {
+        moveSlider(-1);
+    }
+});
