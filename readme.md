@@ -59,4 +59,3 @@ Contribuições são bem-vindas! Se você deseja melhorar este projeto:
    ```
 5. **Abra um Pull Request**: Abra um Pull Request explicando suas mudanças.
 
-![1726706390052](image/readme/1726706390052.png)
